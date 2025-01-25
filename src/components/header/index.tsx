@@ -10,7 +10,7 @@ export const Header = () => {
 
     return (
         <HeaderElement>
-            <h1><a href="#">Erick Rodrigues</a></h1>
+            <h1><a href="#">Desenvolvedor FullStack</a></h1>
 
             {active === true && (
                 <NavigationBurguer>
@@ -32,11 +32,20 @@ const HeaderElement = styled.header`
     align-items: center;
     width: 100%;
     justify-content: space-between;
-    // background: orange;
     padding: 30px 100px;
     .menu-btn{
         width: 70px;
         cursor: pointer;
+    }
+
+    @media(max-width: 768px){
+        padding: 10px;
+        h1{
+            font-size: 25px;
+        }
+        .menu-btn{
+            width: 50px;
+        }
     }
 `
 

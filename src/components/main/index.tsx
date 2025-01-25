@@ -91,6 +91,23 @@ const Introduction = styled.main`
         width: 50px;
         height: 50px;
     }
+
+    @media(max-width: 768px){
+        padding: 20px;
+        justify-content: center;
+        .info h1{
+            font-size: 40px;
+        }
+        .social-media {
+            bottom: 0;
+            position: fixed;
+            width: 100%;
+            justify-content: center;
+            flex-direction: row;
+            background: gray;
+            border-radius: 0;
+        }
+    }
 `
 
 const About = styled.section`
@@ -104,6 +121,24 @@ const About = styled.section`
         width: 60%;
         font-size: 30px;
     }
+
+    @media(max-width: 1024px){
+        p{
+            width: 80%;
+        }
+    }
+    @media(max-width: 768px){
+        p{
+            font-size: 25px;
+            width: 95%;
+        }
+    }
+    @media(max-width: 425px){
+        p{
+            font-size: 20px;
+            width: 100%;
+        }
+    }
 `
 
 const BackgroundPrompt = styled.div`
@@ -115,7 +150,11 @@ const BackgroundPrompt = styled.div`
     height: 100%;
     background-color: black;
     video{
-        width: 100%;
+        // height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
         opacity: 0.175;
     }
 `
