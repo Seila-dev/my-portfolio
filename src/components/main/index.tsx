@@ -52,6 +52,7 @@ export const Main = () => {
             </div>
         </Introduction>
         <About id="about">
+            <h2>Sobre mim</h2>
             <p>Meu nome é Erick e estou em busca da minha primeira oportunidade como Desenvolvedor Fullstack. Com foco em uma criação limpa, com interfaces bem estruturadas que não apenas tem boa aparência como também provêm uma boa experiência para o usuário. Sempre atualizado às tecnológias do mercado, busco projetos desafiadores que melhorem minha habilidade de criar soluções inovadoras. Minhas especialidades são: <strong>TypeScript, ReactJS, Javascript, Styled-components, NodeJS, Express, Content API e Git & GitHub</strong></p>
         </About>
         <Projects />
@@ -76,7 +77,7 @@ const CursorDot = styled.div`
     left: 0;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    z-index: 1;
+    z-index: 9;
     pointer-events: none;
     @media(max-width: 768px){
         display: none;
@@ -92,7 +93,7 @@ const CursorOutline = styled.div`
     left: 0;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    z-index: 0;
+    z-index: 8;
     pointer-events: none;
     transition: left 0.1s ease, top 0.1s ease;
 
@@ -139,7 +140,7 @@ const Introduction = styled.main`
         border-radius: 10px 0 0 10px;
         position: absolute;
         right: 0;
-        z-index: 6;
+        z-index: 9;
     }
 
     .social-media .logo{
@@ -172,8 +173,16 @@ const About = styled.section`
     display: flex;
     width: 100%;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 30px;
     margin: 250px 0;
+    h2{
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 40px;
+        font-weight: 400;
+    }
     p{
         padding: 0px;
         width: 60%;

@@ -1,16 +1,36 @@
 // import Menu from '../../assets/menu.png';
 import styled from 'styled-components';
+import emailLogo from '../../assets/emaillogo.png'
+import { useState } from 'react';
 // import { useState } from 'react';
 
 export const Header = () => {
-    // const [active, setActive] = useState(false);
+    const [active, setActive] = useState(false);
     // const toggleActive = () => {
     //     setActive(!active);
     // }
+    
+    function copyText() {
+        navigator.clipboard.writeText("erickoliveira3975@gmail.com");
+        window.alert("Email copiado com sucesso.")
+    }
 
     return (
         <HeaderElement>
             <h1><a href="#">Desenvolvedor FullStack</a></h1>
+
+            <button onMouseEnter={() => setActive(true)}
+                    onMouseLeave={() => setActive(false)}
+                    onClick={copyText}>
+                <img src={emailLogo} alt="email logo"/>
+                {active === false && (
+                    <p>erickoliveira3975@gmail.com</p>
+                )}
+                {active === true && (
+                    <p>Clique para copiar o email</p>
+                )}
+                
+            </button>
 {/* 
             {active === true && (
                 <NavigationBurguer>
@@ -33,6 +53,27 @@ const HeaderElement = styled.header`
     width: 100%;
     justify-content: space-between;
     padding: 30px 100px;
+
+    button{
+        padding: 5px 10px;
+        outline: none;
+        border: none;
+        background: transparent;
+        color: white;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+    }
+    button img{
+        width: 30px;
+        margin-right: 10px;
+    }
+    button:hover{
+        background: #ccc;
+        // opacity: 0.6;
+        color: black;
+        cursor: pointer;
+    }
     .menu-btn{
         width: 70px;
         cursor: pointer;

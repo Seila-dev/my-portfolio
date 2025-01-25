@@ -228,6 +228,7 @@ const Container = styled.div`
         img{
             width: 80%;
             margin-top: 10px;
+            user-select: none;
         }
         .mobile-img{
             position: absolute;
