@@ -21,7 +21,7 @@ export const Header = () => {
 
             <button onMouseEnter={() => setActive(true)}
                     onMouseLeave={() => setActive(false)}
-                    onClick={copyText}>
+                    onClick={copyText} className='btn'>
                 <img src={emailLogo} alt="email logo"/>
                 {active === false && (
                     <p>erickoliveira3975@gmail.com</p>
@@ -81,11 +81,16 @@ const HeaderElement = styled.header`
 
     @media(max-width: 768px){
         padding: 10px;
+        flex-direction: column;
+        margin-top: 10px;
         h1{
             font-size: 25px;
         }
         .menu-btn{
             width: 50px;
+        }
+        .btn{
+            font-size: 14px;
         }
     }
 `
