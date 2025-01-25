@@ -205,7 +205,6 @@ const Container = styled.div`
     .project{
         position: relative;
         text-align: center;
-
         .descriptionText{
             padding: 5px 8%;
         }
@@ -258,10 +257,16 @@ const Container = styled.div`
         .technologies .logo:hover{
             opacity: 1;
         }
-        
     }
 
-    .projects{
+    @media(max-width: 768px){
         
+        .pinned-projects, .projects{
+            grid-template-columns: 1fr;
+        }
+        .project{
+            margin-bottom: 70px;
+        }
     }
+
 `

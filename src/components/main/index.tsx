@@ -139,6 +139,7 @@ const Introduction = styled.main`
         border-radius: 10px 0 0 10px;
         position: absolute;
         right: 0;
+        z-index: 6;
     }
 
     .social-media .logo{
@@ -185,6 +186,7 @@ const About = styled.section`
         }
     }
     @media(max-width: 768px){
+        margin: 225px 0 150px 0;
         p{
             font-size: 25px;
             width: 95%;
