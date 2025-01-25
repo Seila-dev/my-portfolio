@@ -21,6 +21,11 @@ export const GlobalStyle = createGlobalStyle`
         color: #ffffff;
         font-family: "Roboto", sans-serif;
         min-width: 380px;
+        cursor: none;
+
+        @media(max-width: 768px){
+            cursor: inherit;
+        }
     }
 
     a{

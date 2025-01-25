@@ -21,7 +21,7 @@ import cssLogo from '../../assets/csslogo.png'
 export const Projects = () => {
 
     return (
-        <ProjectsSection>
+        <ProjectsSection id="projects">
             <h2>Projetos</h2>
             <Container>
                 <Divisor><div className="line b1"></div><span className="span-pin">Projetos em destaque</span> <div className="line b2"></div></Divisor>
@@ -153,7 +153,6 @@ export const Projects = () => {
                     </div>
                 </div>
             </Container>
-            <div></div>
         </ProjectsSection>
     )
 }

@@ -4,12 +4,32 @@ import githubIcon from '../../assets/github.png'
 import linkedinIcon from '../../assets/linkedin.png'
 import whatsappIcon from '../../assets/whatsapp.png'
 import { Projects } from "../projects"
+import { Skills } from "../skills"
+import { useEffect, useState } from "react"
+
+interface MouseMovements {
+    clientX: number;
+    clientY: number;
+}
 
 export const Main = () => {
+    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0});
+
+    useEffect(() => {
+        const handleMouseMove = (e: MouseMovements) => {
+            setCursorPosition({ x: e.clientX, y: e.clientY})
+        }
+
+        window.addEventListener("mousemove", handleMouseMove)
+
+        return () => {
+            window.removeEventListener("mousemove", handleMouseMove);
+        }
+    }, [])
 
     return (
         <>
-        <Introduction>
+        <Introduction id="introduction">
             <div className="info">
                 <p>Este é um portifólio de</p>
                 <h1>Erick Rodrigues</h1>
@@ -31,18 +51,55 @@ export const Main = () => {
                 </a>
             </div>
         </Introduction>
-        <About>
+        <About id="about">
             <p>Meu nome é Erick e estou em busca da minha primeira oportunidade como Desenvolvedor Fullstack. Com foco em uma criação limpa, com interfaces bem estruturadas que não apenas tem boa aparência como também provêm uma boa experiência para o usuário. Sempre atualizado às tecnológias do mercado, busco projetos desafiadores que melhorem minha habilidade de criar soluções inovadoras. Minhas especialidades são: <strong>TypeScript, ReactJS, Javascript, Styled-components, NodeJS, Express, Content API e Git & GitHub</strong></p>
         </About>
         <Projects />
+        <Skills />
 
 
         <BackgroundPrompt>
             <video src={backgroundVideo} autoPlay muted loop></video>
         </BackgroundPrompt>
+        <CursorDot style={{ left: `${cursorPosition.x}px`, top: `${cursorPosition.y}px`}}></CursorDot>
+        <CursorOutline style={{ left: `${cursorPosition.x}px`, top: `${cursorPosition.y}px`}}></CursorOutline>
         </>
     )
 }
+
+const CursorDot = styled.div`
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+    @media(max-width: 768px){
+        display: none;
+    }
+`
+
+const CursorOutline = styled.div`
+    width: 30px;
+    height: 30px;
+    border: 2px solid hsla(0, 0%, 100%, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+    transition: left 0.1s ease, top 0.1s ease;
+
+    @media(max-width: 768px){
+        display: none;
+    }
+`
 
 const Introduction = styled.main`
     display: flex;
