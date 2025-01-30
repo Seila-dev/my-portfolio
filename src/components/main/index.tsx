@@ -33,7 +33,7 @@ export const Main = () => {
             <div className="info">
                 <p>Este é um portifólio de</p>
                 <h1>Erick Rodrigues</h1>
-                <span> &gt; Desenvolvedor Fullstack</span>
+                <span> &gt; Desenvolvedor Full Stack</span>
             </div>
                 
             <div className="arrow">
@@ -53,7 +53,7 @@ export const Main = () => {
         </Introduction>
         <About id="about">
             <h2>Sobre mim</h2>
-            <p>Meu nome é Erick e estou em busca da minha primeira oportunidade como Desenvolvedor Fullstack. Com foco em uma criação limpa, com interfaces bem estruturadas que não apenas tem boa aparência como também provêm uma boa experiência para o usuário. Sempre atualizado às tecnológias do mercado, busco projetos desafiadores que melhorem minha habilidade de criar soluções inovadoras. Minhas especialidades são: <strong>TypeScript, ReactJS, Javascript, Styled-components, NodeJS, Express, Content API e Git & GitHub</strong></p>
+            <p>Meu nome é Erick e tenho experiência e aprendizado constante no cargo de Desenvolvedor Full Stack. No foco em uma criação limpa, com interfaces bem estruturadas que não apenas tem boa aparência como também provêm uma boa experiência para o usuário. Sempre atualizado às tecnológias do mercado, busco projetos desafiadores que melhorem minha habilidade de criar soluções inovadoras. Minhas especialidades são: <strong>TypeScript, ReactJS, Javascript, Styled-components, NodeJS, Express, Docker, Context API e Git & GitHub</strong></p>
         </About>
         <Projects />
         <Skills />
@@ -108,13 +108,16 @@ const Introduction = styled.main`
     padding: 150px;
     height: 70vh;
     margin-bottom: 150px;
+    .info p{
+        font-size: 24px;
+    }
     .info h1{
         font-size: 60px;
     }
     .info span{
         color: var(--light-green);
+        font-size: 24px;
     }
-
     .arrow {
         position: absolute;
         left: 50%;
@@ -142,7 +145,6 @@ const Introduction = styled.main`
         right: 0;
         z-index: 9;
     }
-
     .social-media .logo{
         padding: 10px;
     }

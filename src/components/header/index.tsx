@@ -1,14 +1,9 @@
-// import Menu from '../../assets/menu.png';
 import styled from 'styled-components';
 import emailLogo from '../../assets/emaillogo.png'
 import { useState } from 'react';
-// import { useState } from 'react';
 
 export const Header = () => {
     const [active, setActive] = useState(false);
-    // const toggleActive = () => {
-    //     setActive(!active);
-    // }
     
     function copyText() {
         navigator.clipboard.writeText("erickoliveira3975@gmail.com");
@@ -17,7 +12,7 @@ export const Header = () => {
 
     return (
         <HeaderElement>
-            <h1><a href="#">Desenvolvedor FullStack</a></h1>
+            <h1><a href="#">Desenvolvedor Full Stack</a></h1>
 
             <button onMouseEnter={() => setActive(true)}
                     onMouseLeave={() => setActive(false)}
@@ -31,18 +26,6 @@ export const Header = () => {
                 )}
                 
             </button>
-{/* 
-            {active === true && (
-                <NavigationBurguer>
-                    <ul>
-                        <li><a href="#introduction" className="link">Introdução</a></li>
-                        <li><a href="#about" className="link">Sobre mim</a></li>
-                        <li><a href="#projects" className="link">Projetos</a></li>
-                    </ul>
-                </NavigationBurguer>
-            )}
-            <img src={Menu} alt="Menu" className='menu-btn' onClick={toggleActive} /> */}
-
         </HeaderElement>
     )
 }
@@ -94,23 +77,3 @@ const HeaderElement = styled.header`
         }
     }
 `
-
-// const NavigationBurguer = styled.nav`
-//     display: flex;
-//     position: absolute;
-//     right: 160px;
-//     top: 100px;
-//     background: var(--light-green);
-//     padding: 20px;
-//     transition: 0.25s ease-in;
-//     .link{
-//         width: fit-content;
-//         transition: 0.3s ease-in-out;
-//     }
-//     .link:hover{
-//         border-bottom: 1px solid black;
-//     }
-//     li{
-//         padding: 10px;
-//     }
-// `

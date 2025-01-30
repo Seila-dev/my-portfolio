@@ -10,7 +10,7 @@ export const Skills = () => {
         <SkillsSection>
             <h2>Habilidades</h2>
             <SkillsHeader>
-                <button className="btn">FullStack</button>
+                <button className="btn">Full Stack</button>
                 <div className="image-prompt">
                     <img src={lines} alt="lines" />
                 </div>
