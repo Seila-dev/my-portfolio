@@ -29,7 +29,7 @@ export const Projects = () => {
                     <div className="project">
                         <h3 className="name">Projeto E-commerce</h3>
                         <div className="links">
-                            <a href="https://e-commerce-project-frontend-delta.vercel.app/" target="blank">Testar website</a>
+                            <a href="https://e-commerce-project-9adsse5gz-erick-rodrigues-projects.vercel.app/" target="blank">Testar website</a>
                             <a href="https://github.com/Seila-dev/e-commerce-project" target="blank">Ir para repositório</a>
 
                         </div>

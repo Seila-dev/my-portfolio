@@ -14,10 +14,6 @@ export const Skills = () => {
                 <div className="image-prompt">
                     <img src={lines} alt="lines" />
                 </div>
-                {/* <div className="stack-separation">
-                    <button className="frontend-btn btn">Frontend</button>
-                    <button className="backend-btn btn">Backend</button>
-                </div> */}
             </SkillsHeader>
             <SkillsContainer>
                 <div className="front-end stacks">
@@ -65,7 +61,6 @@ const SkillsHeader = styled.div`
     .image-prompt{
         user-select: none;
         z-index: 1; 
-        // display: none;
     }
     .btn{
         padding: 20px 150px;
@@ -91,14 +86,6 @@ const SkillsHeader = styled.div`
         bottom: 0;
         margin-top: 100px;
     }
-    // .stack-separation .frontend-btn{
-    //     left: 10%;
-    //     position: absolute;
-    // }
-    // .stack-separation .backend-btn{
-    //     right: 10%;
-    //     position: absolute;
-    // }
 
     @media(max-width: 900px){
         .image-prompt img{
@@ -118,16 +105,13 @@ const SkillsHeader = styled.div`
 
 const SkillsContainer = styled.div`
     margin-bottom: 150px;
-
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 15%;
-    
     .stacks.front-end{
         align-items: center;
     }
-
     .stacks{
         margin-top: 20px;
         display: flex;
@@ -137,7 +121,6 @@ const SkillsContainer = styled.div`
         justify-content: flex-start;
         width: 50%;
     }
-
     .stacks p{
         display: flex;
         align-items: center;
@@ -158,7 +141,6 @@ const SkillsContainer = styled.div`
         transition: 0.15s ease-in-out;
         user-select: none;
     }
-
     .stacks p:hover{
         transform: scale(105%);
     }
