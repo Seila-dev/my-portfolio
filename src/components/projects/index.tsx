@@ -29,7 +29,9 @@ export const Projects = () => {
                     <div className="project">
                         <h3 className="name">Projeto E-commerce</h3>
                         <div className="links">
-                            <a href="https://e-commerce-project-9adsse5gz-erick-rodrigues-projects.vercel.app/" target="blank">Testar website</a>
+                            {/* Caso der erro no banco de dados, use o de cima */}
+                            {/* <a href="https://e-commerce-project-9adsse5gz-erick-rodrigues-projects.vercel.app/" target="blank">Testar website</a> */}
+                            <a href="https://e-commerce-project-tau-nine.vercel.app/" target="blank">Testar website</a>
                             <a href="https://github.com/Seila-dev/e-commerce-project" target="blank">Ir para repositório</a>
 
                         </div>
@@ -207,6 +209,10 @@ const Container = styled.div`
         text-align: center;
         .descriptionText{
             padding: 5px 8%;
+            word-break: break-all;
+        }
+        .descriptionText p{
+            word-break: break-all;
         }
         .links{
             margin-top: 10px;
