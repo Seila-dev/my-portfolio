@@ -26,6 +26,7 @@ export const Skills = () => {
                     <p>Context API</p>
                     <p>Jest</p>
                     <p>Styled Components</p>
+                    <p>Git</p>
                 </div>
                 <div className="back-end stacks">
                     <p>NodeJS</p>
@@ -33,6 +34,8 @@ export const Skills = () => {
                     <p>Rest API</p>
                     <p>PostgreSQL</p>
                     <p>Prisma ORM</p>
+                    <p>CockroachDB</p>
+                    <p>Docker</p>
                 </div>
             </SkillsContainer>
         </SkillsSection>
