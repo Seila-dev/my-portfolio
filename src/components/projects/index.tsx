@@ -1,4 +1,8 @@
 import styled from "styled-components"
+import portMcdonaldsDesktop from '../../assets/port-mcdonald-pj.png'
+import portMcdonaldsMobile from '../../assets/port-mcdonald-mob-pj.png'
+import portMcdonaldsDocsDesktop from '../../assets/port-mc-docs-pj.png'
+import portMcdonaldsDocsMobile from '../../assets/port-mc-docs-mob-pj.png'
 import portEcommerceDesktop from '../../assets/port-ecommerce-pj.png'
 import portPokedexDesktop from '../../assets/port-pokedex-pj.png'
 import portPortfolioDesktop from '../../assets/port-portifolio-pj.png'
@@ -46,6 +50,46 @@ export const Projects = () => {
                         </div>
                         <div className="descriptionText">
                             <p>O projeto e-commerce simula uma loja digital real, com seções de login, registro, produto. Funções como carrinho de compras usando Context API e interações em tempo real com Banco de dados. </p>
+                        </div>
+                    </div>
+                    <div className="project">
+                        <h3 className="name">McDonald's Side App Server</h3>
+                        <div className="links">
+                            <a href="https://mcdonalds-server.onrender.com/docs/" target="blank">Ir para documentação</a>
+                            <a href="https://github.com/Seila-dev/McDonalds-server" target="blank">Ir para repositório</a>
+
+                        </div>
+                        <img src={portMcdonaldsDocsDesktop} alt="projeto em destaque" className="desktop-img" />
+                        <img src={portMcdonaldsDocsMobile} alt="projeto em destaque" className="mobile-img" />
+                        <div className="technologies">
+                            <div className="tech-box">
+                                <img src={reactLogo} alt="logo react" className="logo" />
+                                <img src={typescriptLogo} alt="logo typescript" className="logo" />
+                                <img src={styledCLogo} alt="logo styled-components" className="logo" />
+                            </div>
+                        </div>
+                        <div className="descriptionText">
+                            <p>Esta API foi criada para gerenciar o processo de autenticação de usuários para a plataforma McDonald's. Ela permite o cadastro de novos usuários, login via email e senha, e a visualização do perfil do usuário autenticado.</p>
+                        </div>
+                    </div>
+                    <div className="project">
+                        <h3 className="name">McDonald's Side app Authentication</h3>
+                        <div className="links">
+                            <a href="https://mc-donalds-authentication.vercel.app/login" target="blank">Testar website</a>
+                            <a href="https://github.com/Seila-dev/McDonalds-authentication" target="blank">Ir para repositório</a>
+
+                        </div>
+                        <img src={portMcdonaldsDesktop} alt="projeto em destaque" className="desktop-img" />
+                        <img src={portMcdonaldsMobile} alt="projeto em destaque" className="mobile-img" />
+                        <div className="technologies">
+                            <div className="tech-box">
+                                <img src={reactLogo} alt="logo react" className="logo" />
+                                <img src={typescriptLogo} alt="logo typescript" className="logo" />
+                                <img src={styledCLogo} alt="logo styled-components" className="logo" />
+                            </div>
+                        </div>
+                        <div className="descriptionText">
+                            <p>Um projeto paralelo para testar minhas habilidades de autenticação (React hook form + Zod + JWT + BCrypt) </p>
                         </div>
                     </div>
                     <div className="project">
@@ -209,10 +253,8 @@ const Container = styled.div`
         text-align: center;
         .descriptionText{
             padding: 5px 8%;
-            word-break: break-all;
         }
         .descriptionText p{
-            word-break: break-all;
         }
         .links{
             margin-top: 10px;
