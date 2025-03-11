@@ -51,7 +51,7 @@ export const pinnedProjectsData = [
     {
         name: "McDonald's Side app Authentication",
         liveLink: "https://mc-donalds-authentication.vercel.app/login",
-        repoLink: "https://github.com/Seila-dev/e-commerce-project",
+        repoLink: "https://github.com/Seila-dev/McDonalds-authentication",
         desktopImg: portMcdonaldsDesktop,
         mobileImg: portMcdonaldsMobile,
         description: "Um projeto paralelo para testar minhas habilidades de autenticação (React hook form + Zod + JWT + BCrypt) ",
