@@ -1,50 +1,58 @@
-# React + TypeScript + Vite
+# 🚀 Portfólio - Desenvolvedor Full Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o meu portfólio de projetos de desenvolvimento web, construído utilizando as tecnologias mais recentes do mercado. Aqui, você pode ver alguns dos projetos que desenvolvi até o momento, incluindo projetos em andamento e concluídos. Meu portfólio reflete minhas habilidades como desenvolvedor Full Stack, com experiência em front-end, back-end e integração de APIs.
 
-Currently, two official plugins are available:
+## 👨‍💻 Meus Projetos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Aqui estão alguns dos projetos que você encontrará no meu portfólio:
+1. Projeto E-commerce (EM DESENVOLVIMENTO)
 
-## Expanding the ESLint configuration
+- **Descrição**: O projeto simula uma loja digital real, com funcionalidades como login, registro de produtos e carrinho de compras usando Context API. Está integrado com um banco de dados para interações em tempo real.
+- **Tecnologias**: React, TypeScript, Styled Components, PostgreSQL, Express, Node.js, Prisma
+- **Repositório**: [Link para o repositório](https://github.com/Seila-dev/e-commerce-project)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. McDonald's Side App Client
 
-- Configure the top-level `parserOptions` property like this:
+- **Descrição**: Frontend do Mcdonalds Server, autenticação JWT + BCRYPT usando typescript + react
+- **Tecnologias**: TypeScript, React, Styled Components, JWT + BCrypt, react-hook-form + zod
+- **Repositório**: [Link para o repositório](https://github.com/Seila-dev/McDonalds-authentication)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. McDonald's Side App Server
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **Descrição**: Uma API para gerenciar a autenticação de usuários para a plataforma McDonald's. Permite cadastro, login e visualização de perfil de usuário autenticado.
+- **Tecnologias**: TypeScript, Node.js, Express, Prisma, CockroachDB
+- **Repositório**: [Link para o repositório](https://github.com/Seila-dev/McDonalds-server)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+4. Projeto Pokedex
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **Descrição**: Aplicação interativa que permite aos usuários buscar informações sobre os Pokémons usando a API da PokeAPI. Exibe uma lista de Pokémons com detalhes de habilidades, movimentos e tipos.
+- **Tecnologias**: React, JavaScript, Styled Components
+- **Repositório**: [Link para o repositório](https://github.com/Seila-dev/pokedex-react)
+
+5. Meu Portifólio
+
+- **Descrição**: O portfólio que você está vendo neste momento, feito para exibir meus projetos e habilidades como desenvolvedor Full Stack.
+- **Tecnologias**: React, TypeScript, Styled Components
+- **Repositório**: [Link para o repositório](https://github.com/Seila-dev/my-portfolio)
+
+## 🛠️ Minhas tecnologias E ferramentas
+
+- **Frontend:**
+  - ReactJS
+  - TypeScript
+  - Styled Components
+  - JavaScript
+  - HTML
+  - CSS
+- **Backend:**
+  - Node.js
+  - Express.js
+  - PostgreSQL
+  - Prisma ORM
+  - CockroachDB
+- **Ferramentas e outras tecnologias:**
+  - Docker
+  - Jest
+  - Context API
+
+  Desenvolvedor: Erick Rodrigues Dev. Full Stack
