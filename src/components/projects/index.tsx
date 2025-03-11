@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import portEcommerceAdminDesktop from '../../assets/port-ecommerce-admin-pj.png'
+import portEcommerceAdminMobile from '../../assets/port-ecommerce-admin-mob-pj.png'
 import portMcdonaldsDesktop from '../../assets/port-mcdonald-pj.png'
 import portMcdonaldsMobile from '../../assets/port-mcdonald-mob-pj.png'
 import portMcdonaldsDocsDesktop from '../../assets/port-mc-docs-pj.png'
@@ -21,6 +23,11 @@ import typescriptLogo from '../../assets/typescriptlogo.png'
 import javascriptLogo from '../../assets/javascriptlogo.png'
 import htmlLogo from '../../assets/htmllogo.png'
 import cssLogo from '../../assets/csslogo.png'
+import postgreLogo from '../../assets/postgre.png'
+import cockroachdbLogo from '../../assets/cockroachdblogo.png'
+import prismaLogo from '../../assets/prismalogo.png'
+import expressLogo from '../../assets/expressjs.png'
+import nodeLogo from '../../assets/nodejs.png'
 
 export const Projects = () => {
 
@@ -31,7 +38,7 @@ export const Projects = () => {
                 <Divisor><div className="line b1"></div><span className="span-pin">Projetos em destaque</span> <div className="line b2"></div></Divisor>
                 <div className="pinned-projects">
                     <div className="project">
-                        <h3 className="name">Projeto E-commerce</h3>
+                        <h3 className="name">Projeto E-commerce (EM DESENVOLVIMENTO)</h3>
                         <div className="links">
                             {/* Caso der erro no banco de dados, use o de cima */}
                             {/* <a href="https://e-commerce-project-9adsse5gz-erick-rodrigues-projects.vercel.app/" target="blank">Testar website</a> */}
@@ -46,10 +53,40 @@ export const Projects = () => {
                                 <img src={reactLogo} alt="logo react" className="logo" />
                                 <img src={typescriptLogo} alt="logo typescript" className="logo" />
                                 <img src={styledCLogo} alt="logo styled-components" className="logo" />
+                                <img src={postgreLogo} alt="logo postgre" className="logo" />
+                                <img src={expressLogo} alt="logo express" className="logo" />
+                                <img src={nodeLogo} alt="logo node" className="logo" />
+                                <img src={prismaLogo} alt="logo prisma" className="logo" />
                             </div>
                         </div>
                         <div className="descriptionText">
                             <p>O projeto e-commerce simula uma loja digital real, com seções de login, registro, produto. Funções como carrinho de compras usando Context API e interações em tempo real com Banco de dados. </p>
+                        </div>
+                    </div>
+                    <div className="project">
+                        <h3 className="name">Projeto E-commerce Admin (EM DESENVOLVIMENTO)</h3>
+                        <div className="links">
+                            {/* Caso der erro no banco de dados, use o de cima */}
+                            {/* <a href="https://e-commerce-project-9adsse5gz-erick-rodrigues-projects.vercel.app/" target="blank">Testar website</a> */}
+                            <a href="https://e-commerce-project-tau-nine.vercel.app/admin" target="blank">Testar website</a>
+                            <a href="https://github.com/Seila-dev/e-commerce-project" target="blank">Ir para repositório</a>
+
+                        </div>
+                        <img src={portEcommerceAdminDesktop} alt="projeto em destaque" className="desktop-img" />
+                        <img src={portEcommerceAdminMobile} alt="projeto em destaque" className="mobile-img" />
+                        <div className="technologies">
+                            <div className="tech-box">
+                                <img src={reactLogo} alt="logo react" className="logo" />
+                                <img src={typescriptLogo} alt="logo typescript" className="logo" />
+                                <img src={styledCLogo} alt="logo styled-components" className="logo" />
+                                <img src={postgreLogo} alt="logo postgre" className="logo" />
+                                <img src={expressLogo} alt="logo express" className="logo" />
+                                <img src={nodeLogo} alt="logo node" className="logo" />
+                                <img src={prismaLogo} alt="logo prisma" className="logo" />
+                            </div>
+                        </div>
+                        <div className="descriptionText">
+                            <p>Página Administrador do Ecommerce (ainda em desenvolvimento).  </p>
                         </div>
                     </div>
                     <div className="project">
@@ -63,9 +100,11 @@ export const Projects = () => {
                         <img src={portMcdonaldsDocsMobile} alt="projeto em destaque" className="mobile-img" />
                         <div className="technologies">
                             <div className="tech-box">
-                                <img src={reactLogo} alt="logo react" className="logo" />
+                                <img src={cockroachdbLogo} alt="logo cockroachdb" className="logo" />
                                 <img src={typescriptLogo} alt="logo typescript" className="logo" />
-                                <img src={styledCLogo} alt="logo styled-components" className="logo" />
+                                <img src={nodeLogo} alt="logo nodejs" className="logo" />
+                                <img src={expressLogo} alt="logo express" className="logo" />
+                                <img src={prismaLogo} alt="logo prisma" className="logo" />
                             </div>
                         </div>
                         <div className="descriptionText">
@@ -251,6 +290,7 @@ const Container = styled.div`
     .project{
         position: relative;
         text-align: center;
+        margin-bottom: 20px;
         .descriptionText{
             padding: 5px 8%;
         }
