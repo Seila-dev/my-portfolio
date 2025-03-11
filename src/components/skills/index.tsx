@@ -151,7 +151,7 @@ const SkillsContainer = styled.div`
     @media(max-width: 550px){
         .stacks p {
             padding: 7px 18px;
-            font-size: 13px;
+            font-size: 10px;
         }
     }
 `

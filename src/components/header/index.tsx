@@ -76,4 +76,9 @@ const HeaderElement = styled.header`
             font-size: 14px;
         }
     }
+    @media(max-widtH: 450px){
+        h1{
+            font-size: 19px;
+        }
+    }
 `

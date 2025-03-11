@@ -20,7 +20,6 @@ export const GlobalStyle = createGlobalStyle`
         background: var(--white);
         color: #ffffff;
         font-family: "Roboto", sans-serif;
-        min-width: 380px;
         cursor: none;
 
         @media(max-width: 768px){

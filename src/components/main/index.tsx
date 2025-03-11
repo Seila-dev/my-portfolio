@@ -53,7 +53,11 @@ export const Main = () => {
         </Introduction>
         <About id="about">
             <h2>Sobre mim</h2>
-            <p>Meu nome é Erick e tenho experiência e aprendizado constante no cargo de Desenvolvedor Full Stack. No foco em uma criação limpa, com interfaces bem estruturadas que não apenas tem boa aparência como também provêm uma boa experiência para o usuário. Sempre atualizado às tecnológias do mercado, busco projetos desafiadores que melhorem minha habilidade de criar soluções inovadoras. Minhas especialidades são: <strong>TypeScript, ReactJS, Javascript, Styled-components, NodeJS, Express, Docker, Context API e Git & GitHub</strong></p>
+            <div>
+                <p className="paragraph">Meu nome é Erick e tenho experiência e aprendizado constante no cargo de Desenvolvedor Full Stack. </p>
+                <p className="paragraph">No foco em uma criação limpa, com interfaces bem estruturadas que não apenas tem boa aparência como também provêm uma boa experiência para o usuário. Sempre atualizado às tecnológias do mercado, busco projetos desafiadores que melhorem minha habilidade de criar soluções inovadoras.</p>
+                <p className="paragraph">Minhas especialidades são: <strong>TypeScript, ReactJS, Javascript, Styled-components, NodeJS, Express, Docker, Context API e Git & GitHub</strong></p>
+            </div>
         </About>
         <Projects />
         <Skills />
@@ -168,6 +172,20 @@ const Introduction = styled.main`
             background: gray;
             border-radius: 0;
         }
+        .arrow {
+            left: 43%;
+        }
+    }
+    @media(max-width: 380px){
+        .info h1{
+            font-size: 32px;
+        }
+        .info span{
+            font-size: 15px;
+        }
+        .info p{
+            font-size: 20px;
+        }
     }
 `
 
@@ -185,27 +203,38 @@ const About = styled.section`
         font-size: 40px;
         font-weight: 400;
     }
-    p{
-        padding: 0px;
+    div{
         width: 60%;
+        padding: 0px;
+    }
+    div p{
         font-size: 30px;
     }
 
+    p.paragraph{
+        margin-bottom: 20px;
+    }
+
     @media(max-width: 1024px){
-        p{
-            width: 80%;
+        p.paragraph{
+            width: 100%;
+            font-size: 25px;
         }
     }
     @media(max-width: 768px){
-        margin: 225px 0 150px 0;
-        p{
+        p.paragraph{
             font-size: 25px;
-            width: 95%;
+            width: 100%;
+        }
+        div {
+            width: 100%;
         }
     }
     @media(max-width: 425px){
-        p{
+        div p{
             font-size: 20px;
+        }
+        div {
             width: 100%;
         }
     }
