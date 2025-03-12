@@ -6,6 +6,7 @@ import whatsappIcon from '../../assets/whatsapp.png'
 import { Projects } from "../projects"
 import { Skills } from "../skills"
 import { useEffect, useState } from "react"
+import cvDownload from '../../assets/erickrodrigues-dev-fullstack.pdf'
 
 interface MouseMovements {
     clientX: number;
@@ -34,6 +35,9 @@ export const Main = () => {
                 <p>Este é um portifólio de</p>
                 <h1>Erick Rodrigues</h1>
                 <span> &gt; Desenvolvedor Full Stack</span>
+                <div className="cv-style">
+                    <a href={cvDownload} className="download-cv" download>Baixar Currículo</a>
+                </div>
             </div>
                 
             <div className="arrow">
@@ -121,6 +125,38 @@ const Introduction = styled.main`
     .info span{
         color: var(--light-green);
         font-size: 24px;
+    }
+    .info .cv-style{
+        margin-top: 25px;
+    }
+    .info .download-cv{
+        background: white;
+        background: #000;
+        width: 100%;
+        max-width: 200px;
+        display: flex;
+        opacity: 0.9;
+        border-radius: 5px;
+        font-weight: 600;
+        padding: 10px 20px;
+        cursor: pointer;
+        color: var(--light-green);
+        animation: fade-up 0.5s 0.4s backwards;
+        transition: 0.15s ease-in;
+        &:hover{
+            background: #ccc2;
+        }
+    }
+
+    @keyframes fade-up {
+        0% {
+            opacity: 0;
+            transform: translateY(30px) scale(0.9);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0px) scale(1);
+        }
     }
     .arrow {
         position: absolute;
