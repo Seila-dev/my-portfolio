@@ -46,6 +46,7 @@ export const Skills = () => {
 const SkillsSection = styled.section`
     display: flex;
     flex-direction: column;
+    animation: fade-up 0.5s 0.4s backwards;
     h2{
         text-align: center;
         margin-bottom: 50px;

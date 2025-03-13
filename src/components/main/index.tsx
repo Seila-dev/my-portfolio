@@ -126,6 +126,9 @@ const Introduction = styled.main`
         color: var(--light-green);
         font-size: 24px;
     }
+    .info *{
+        animation: fade-up 0.5s 0.4s backwards;
+    }
     .info .cv-style{
         margin-top: 25px;
     }
@@ -148,16 +151,7 @@ const Introduction = styled.main`
         }
     }
 
-    @keyframes fade-up {
-        0% {
-            opacity: 0;
-            transform: translateY(30px) scale(0.9);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0px) scale(1);
-        }
-    }
+    
     .arrow {
         position: absolute;
         left: 50%;
@@ -165,15 +159,7 @@ const Introduction = styled.main`
         animation: anima-seta 2000ms ease-in-out infinite;
         opacity: 0;
     }
-    @keyframes anima-seta {
-        to {
-            opacity:1;
-            transform: translateY(88px);
-        }
-    }
-    .arrow p{
-        font-size: 100px;
-    }
+
 
     .social-media{
         display: flex;
@@ -184,6 +170,7 @@ const Introduction = styled.main`
         position: absolute;
         right: 0;
         z-index: 9;
+        animation: fade-up 0.5s 0.4s backwards;
     }
     .social-media .logo{
         padding: 10px;
@@ -233,6 +220,7 @@ const About = styled.section`
     align-items: center;
     padding: 30px;
     margin: 250px 0;
+    animation: fade-up 0.5s 0.4s backwards;
     h2{
         text-align: center;
         margin-bottom: 50px;

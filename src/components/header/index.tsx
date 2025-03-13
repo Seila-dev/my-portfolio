@@ -37,6 +37,10 @@ const HeaderElement = styled.header`
     justify-content: space-between;
     padding: 30px 100px;
 
+    h1{
+        animation: fade-up 0.5s 0.4s backwards;
+    }
+
     button{
         padding: 5px 10px;
         outline: none;

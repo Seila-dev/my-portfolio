@@ -34,6 +34,8 @@ const ProjectsSection = styled.section`
     justify-content: center;
     flex-direction: column;
     margin-bottom: 150px;
+    animation: fade-up 0.5s 0.4s backwards;
+    
     h2{
         text-align: center;
         margin-bottom: 50px;

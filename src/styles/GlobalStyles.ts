@@ -34,4 +34,15 @@ export const GlobalStyle = createGlobalStyle`
     button {
         font-family: "Roboto", sans-serif;
     }
+
+    @keyframes fade-up {
+        0% {
+            opacity: 0;
+            transform: translateY(30px) scale(0.9);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0px) scale(1);
+        }
+    }
 `
