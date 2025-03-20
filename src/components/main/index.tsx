@@ -6,7 +6,7 @@ import whatsappIcon from '../../assets/whatsapp.png'
 import { Projects } from "../projects"
 import { Skills } from "../skills"
 import { useEffect, useState } from "react"
-import cvDownload from '../../assets/erickrodrigues-dev-fullstack.pdf'
+import cvDownload from '../../assets/ErickOliveiraRodrigues_DevWebFullStack2.pdf'
 
 interface MouseMovements {
     clientX: number;
