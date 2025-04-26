@@ -6,7 +6,11 @@ export const Project: React.FC<ProjectProps> = ({ name, liveLink, repoLink, desk
     <div className="project">
       <h3 className="name">{name}</h3>
       <div className="links">
-        <a href={liveLink} target="blank">Testar website</a>
+        {liveLink ? (
+          <a href={liveLink} target="blank">Testar website</a>
+        ) : (
+          <a className="disabled-link">Não há visualização</a>
+        )}
         <a href={repoLink} target="blank">Ir para repositório</a>
       </div>
       <img src={desktopImg} alt="projeto em destaque" className="desktop-img" />
