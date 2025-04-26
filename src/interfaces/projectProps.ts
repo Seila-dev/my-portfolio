@@ -1,6 +1,6 @@
 export interface ProjectProps {
     name: string;
-    liveLink: string;
+    liveLink: string | undefined;
     repoLink: string;
     desktopImg: string;
     mobileImg: string;
