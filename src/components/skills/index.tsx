@@ -20,21 +20,27 @@ export const Skills = () => {
                     <p>HTML</p>
                     <p>CSS</p>
                     <p>JavaScript</p>
-                    <p>ReactJS</p>
+                    <p>React.js</p>
+                    <p>Next.js</p>
                     <p>DOM</p>
                     <p>TypeScript</p>
                     <p>Context API</p>
+                    <p>React Query</p>
                     <p>Jest</p>
+                    <p>TailwindCSS</p>
                     <p>Styled Components</p>
                     <p>Git</p>
                 </div>
                 <div className="back-end stacks">
-                    <p>NodeJS</p>
+                    <p>Node.js</p>
+                    <p>Nest.js</p>
                     <p>Express</p>
                     <p>Rest API</p>
                     <p>PostgreSQL</p>
+                    <p>SQL</p>
                     <p>Prisma ORM</p>
                     <p>CockroachDB</p>
+                    <p>Railway</p>
                     <p>Docker</p>
                 </div>
             </SkillsContainer>

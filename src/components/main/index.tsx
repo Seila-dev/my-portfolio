@@ -6,7 +6,7 @@ import whatsappIcon from '../../assets/whatsapp.png'
 import { Projects } from "../projects"
 import { Skills } from "../skills"
 import { useEffect, useState } from "react"
-import cvDownload from '../../assets/ErickOliveiraRodrigues_DevWebFullStack3.pdf'
+import cvDownload from '../../assets/ErickOliveiraRodrigues_DevWebFullStack_PDF.pdf'
 
 interface MouseMovements {
     clientX: number;
@@ -14,11 +14,11 @@ interface MouseMovements {
 }
 
 export const Main = () => {
-    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0});
+    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
         const handleMouseMove = (e: MouseMovements) => {
-            setCursorPosition({ x: e.clientX, y: e.clientY})
+            setCursorPosition({ x: e.clientX, y: e.clientY })
         }
 
         window.addEventListener("mousemove", handleMouseMove)
@@ -30,48 +30,52 @@ export const Main = () => {
 
     return (
         <>
-        <Introduction id="introduction">
-            <div className="info">
-                <p>Este é um portifólio de</p>
-                <h1>Erick Rodrigues</h1>
-                <span> &gt; Desenvolvedor Full Stack</span>
-                <div className="cv-style">
-                    <a href={cvDownload} className="download-cv" download>Baixar Currículo</a>
+            <Introduction id="introduction">
+                <div className="info">
+                    <p>Este é um portifólio de</p>
+                    <h1>Erick Rodrigues</h1>
+                    <span> &gt; Desenvolvedor Full Stack</span>
+                    <div className="cv-style">
+                        <a href={cvDownload} className="download-cv" download>Baixar Currículo</a>
+                    </div>
                 </div>
-            </div>
-                
-            <div className="arrow">
-                <p>↓</p>
-            </div>
-            <div className="social-media">
-                <a href="https://github.com/Seila-dev" className="logo" target="BLANK">
-                    <img src={githubIcon} alt="github icon" />
-                </a>
-                <a href="https://www.linkedin.com/in/erickrodrigues-dev/" className="logo" target="BLANK">
-                    <img src={linkedinIcon} alt="linkedin icon" />
-                </a>
-                <a href="https://api.whatsapp.com/send?phone=5521980798925" className="logo" target="BLANK">
-                    <img src={whatsappIcon} alt="whatsapp icon" />
-                </a>
-            </div>
-        </Introduction>
-        <About id="about">
-            <h2>Sobre mim</h2>
-            <div>
-                <p className="paragraph">Meu nome é Erick e tenho experiência e aprendizado constante no cargo de Desenvolvedor Full Stack. </p>
-                <p className="paragraph">No foco em uma criação limpa, com interfaces bem estruturadas que não apenas tem boa aparência como também provêm uma boa experiência para o usuário. Sempre atualizado às tecnológias do mercado, busco projetos desafiadores que melhorem minha habilidade de criar soluções inovadoras.</p>
-                <p className="paragraph">Minhas especialidades são: <strong>TypeScript, ReactJS, Javascript, Styled-components, NodeJS, Express, Docker, Context API e Git & GitHub</strong></p>
-            </div>
-        </About>
-        <Projects />
-        <Skills />
+
+                <div className="arrow">
+                    <p>↓</p>
+                </div>
+                <div className="social-media">
+                    <a href="https://github.com/Seila-dev" className="logo" target="BLANK">
+                        <img src={githubIcon} alt="github icon" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/erickrodrigues-dev/" className="logo" target="BLANK">
+                        <img src={linkedinIcon} alt="linkedin icon" />
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=5521980798925" className="logo" target="BLANK">
+                        <img src={whatsappIcon} alt="whatsapp icon" />
+                    </a>
+                </div>
+            </Introduction>
+            <About id="about">
+                <h2>Sobre mim</h2>
+                <div>
+                    <p className="description">Desenvolvedor Full Stack com foco em criar <strong>soluções digitais escaláveis, performáticas e centradas na experiência do usuário.</strong></p>
+                    <br />
+                    <p className="description">Tenho experiência prática em projetos reais e entregas sob demanda, atuando em todas as camadas da aplicação, do backend robusto ao frontend moderno. Trabalho com foco em boas práticas, <strong>arquitetura limpa e interfaces bem estruturadas</strong> que entregam <strong>valor</strong> de verdade.</p>
+                    <br />
+                    <p className="description">Atualmente, aprofundo minha expertise por meio de mentorias individuais e aplico esse conhecimento em contextos que exigem agilidade, responsabilidade e resolução de problemas reais. Estou sempre atualizado com as tecnologias do mercado e busco constantemente desafios que me façam evoluir como profissional.</p>
+                    <br />
+                    <p className="description">Minhas especialidades: <strong>Next.js, React.js, TypeScript, Javascript, Nest.js, Node.js, Express, PostgreSQL, Docker, Git & Github, Styled Components/Tailwind </strong></p>
+                </div>
+            </About>
+            <Projects />
+            <Skills />
 
 
-        <BackgroundPrompt>
-            <video src={backgroundVideo} autoPlay muted loop></video>
-        </BackgroundPrompt>
-        <CursorDot style={{ left: `${cursorPosition.x}px`, top: `${cursorPosition.y}px`}}></CursorDot>
-        <CursorOutline style={{ left: `${cursorPosition.x}px`, top: `${cursorPosition.y}px`}}></CursorOutline>
+            <BackgroundPrompt>
+                <video src={backgroundVideo} autoPlay muted loop></video>
+            </BackgroundPrompt>
+            <CursorDot style={{ left: `${cursorPosition.x}px`, top: `${cursorPosition.y}px` }}></CursorDot>
+            <CursorOutline style={{ left: `${cursorPosition.x}px`, top: `${cursorPosition.y}px` }}></CursorOutline>
         </>
     )
 }
