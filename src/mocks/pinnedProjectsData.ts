@@ -2,14 +2,16 @@
 //import portEcommerceAdminMobile from '../assets/port-ecommerce-admin-mob-pj.png'
 import portJoysystemDesktop from '../assets/port-joysystem-pj.png'
 import portJoysystemMobile from '../assets/port-joysystem-mob-pj.png'
+import portBooksregisterDesktop from '../assets/port-booksregister-pj.png'
+import portBooksregisterMobile from '../assets/port-booksregister-mob-pj.png'
 // import portMcdonaldsDesktop from '../assets/port-mcdonald-pj.png'
 // import portMcdonaldsMobile from '../assets/port-mcdonald-mob-pj.png'
 // import portMcdonaldsDocsDesktop from '../assets/port-mc-docs-pj.png'
 // import portMcdonaldsDocsMobile from '../assets/port-mc-docs-mob-pj.png'
 //import portEcommerceDesktop from '../assets/port-ecommerce-pj.png'
-import portPortfolioDesktop from '../assets/port-portifolio-pj.png'
+// import portPortfolioDesktop from '../assets/port-portifolio-pj.png'
 //import portEcommerceMobile from '../assets/port-ecommerce-mob-pj.png'
-import portPortfolioMobile from '../assets/port-portifolio-mob-pj.png'
+// import portPortfolioMobile from '../assets/port-portifolio-mob-pj.png'
 import reactLogo from '../assets/reactlogo.png'
 import styledCLogo from '../assets/styled-c.png'
 import typescriptLogo from '../assets/typescriptlogo.png'
@@ -18,6 +20,8 @@ import postgreLogo from '../assets/postgre.png'
 import prismaLogo from '../assets/prismalogo.png'
 import expressLogo from '../assets/expressjs.png'
 import nodeLogo from '../assets/nodejs.png'
+import tailwindLogo from '../assets/tailwindcss.png'
+import nextLogo from '../assets/nextjs.png'
 
 export const pinnedProjectsData = [
     // {
@@ -74,14 +78,23 @@ export const pinnedProjectsData = [
         description: "Aplicação web gamificada de gestão de produtividade. Permite criar tarefas, acumular moedas, resgatar recompensas, fazer anotações e visualizar um calendário integrado de objetivos.",
         technologies: [reactLogo, typescriptLogo, styledCLogo]
     },
-
     {
-        name: "Meu Portifólio",
-        liveLink: "https://my-portfolio-seven-blush-46.vercel.app/",
-        repoLink: "https://github.com/Seila-dev/my-portfolio",
-        desktopImg: portPortfolioDesktop,
-        mobileImg: portPortfolioMobile,
-        description: "O portifólio que você está vendo nesse exato momento.",
-        technologies: [reactLogo, typescriptLogo, styledCLogo]
+        name: "WatchList",
+        liveLink: "https://books-register-v2.vercel.app/",
+        repoLink: "https://github.com/Seila-dev/books-register-v2",
+        desktopImg: portBooksregisterDesktop,
+        mobileImg: portBooksregisterMobile,
+        description: "WatchList é uma aplicação full stack desenvolvida com Next.js, onde você pode gerenciar seus livros, filmes e séries de forma organizada. A ideia é manter um espaço pessoal para salvar o que você já viu ou pretende ver, funcionando como uma galeria multimídia com categorias personalizadas.",
+        technologies: [nextLogo, typescriptLogo, tailwindLogo]
     }
+
+    // {
+    //     name: "Meu Portifólio",
+    //     liveLink: "https://my-portfolio-seven-blush-46.vercel.app/",
+    //     repoLink: "https://github.com/Seila-dev/my-portfolio",
+    //     desktopImg: portPortfolioDesktop,
+    //     mobileImg: portPortfolioMobile,
+    //     description: "O portifólio que você está vendo nesse exato momento.",
+    //     technologies: [reactLogo, typescriptLogo, styledCLogo]
+    // }
 ];
