@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { Calendar, Zap } from 'lucide-react';
 import image from '../../assets/plaiades-2.webp'
-import video from '../../assets/subaru-stairs.mp4';
+// import video from '../../assets/subaru-stairs.mp4';
 
 const About = () => {
     const [currentExperience, setCurrentExperience] = useState<string>(
@@ -369,14 +369,14 @@ const BoxDate = styled.span`
     font-weight: 500;
 `;
 
-const BackgroundVideo = styled.video`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.20;
-  z-index: 0;
-  pointer-events: none;
-`;
+// const BackgroundVideo = styled.video`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   opacity: 0.20;
+//   z-index: 0;
+//   pointer-events: none;
+// `;

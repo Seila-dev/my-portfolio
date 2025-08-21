@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Pencil, Code2, SquareDashedMousePointer } from "lucide-react";
+import { Code2, SquareDashedMousePointer } from "lucide-react";
 import ProjectImage2 from "../../assets/watchlist-2.webp";
 import ProjectImage3 from "../../assets/watchlist-3.png";
 import image from "../../assets/Subaru, Rem and Puck.jpg";
@@ -157,30 +157,30 @@ const Dates = styled.div`
   margin-bottom: 1.5rem;
 `;
 
-const Categories = styled.div`
-  margin-bottom: 1.5rem;
+// const Categories = styled.div`
+//   margin-bottom: 1.5rem;
 
-  h3 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
+//   h3 {
+//     font-size: 1.125rem;
+//     font-weight: 600;
+//     margin-bottom: 0.5rem;
+//   }
 
-  div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
+//   div {
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 0.5rem;
+//   }
 
-  span {
-    padding: 0.5rem 0.75rem;
-    background: white;
-    color: #1f2937;
-    border-radius: 0.375rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-  }
-`;
+//   span {
+//     padding: 0.5rem 0.75rem;
+//     background: white;
+//     color: #1f2937;
+//     border-radius: 0.375rem;
+//     font-size: 0.875rem;
+//     font-weight: 500;
+//   }
+// `;
 
 const Footer = styled.div`
   font-size: 0.75rem;
@@ -229,28 +229,28 @@ const ActionMethods = styled.div`
     }
 `
 
-const MediaContent = styled.div`
-  display: flex;
-    gap: 1rem;
-    height: 100%;
-    width: 100%;
-    align-items: flex-start;
-    img {
-        max-width: 250px;
-        height: 180px;
-        width: 100%;
-        border-radius: 10px;
-        cursor: pointer;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-        }
-    @media (min-width: 1024px) {
-        flex-direction: column;
-        align-items: flex-end;
-        // img {
-        //     width: 32%;
-        // }
-    }
-`;
+// const MediaContent = styled.div`
+//   display: flex;
+//     gap: 1rem;
+//     height: 100%;
+//     width: 100%;
+//     align-items: flex-start;
+//     img {
+//         max-width: 250px;
+//         height: 180px;
+//         width: 100%;
+//         border-radius: 10px;
+//         cursor: pointer;
+//         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+//         }
+//     @media (min-width: 1024px) {
+//         flex-direction: column;
+//         align-items: flex-end;
+//         // img {
+//         //     width: 32%;
+//         // }
+//     }
+// `;
 
 // ---------------- Component ----------------
 export default function MainProject() {

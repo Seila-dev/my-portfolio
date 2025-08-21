@@ -152,9 +152,9 @@
 
 
 
-import styled, { keyframes } from "styled-components";
-import { Github, ExternalLink } from "lucide-react";
-import ProjectImage from "../../assets/watchlist.png";
+import styled from "styled-components";
+// import { Github, ExternalLink } from "lucide-react";
+// import ProjectImage from "../../assets/watchlist.png";
 import MainProject from "../MainProject";
 
 const Projects = () => {
@@ -204,10 +204,10 @@ export default Projects;
 
 // ---------------------- styled ----------------------
 
-const fadeIn = keyframes`
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-`;
+// const fadeIn = keyframes`
+//   from { opacity: 0; transform: translateY(20px); }
+//   to { opacity: 1; transform: translateY(0); }
+// `;
 
 const AboutSection = styled.section`
   display: flex;
@@ -224,26 +224,26 @@ const AboutSection = styled.section`
 //   }
 `;
 
-const Header = styled.div`
-  margin-bottom: 60px;
-  animation: ${fadeIn} 0.8s ease-out;
-`;
+// const Header = styled.div`
+//   margin-bottom: 60px;
+//   animation: ${fadeIn} 0.8s ease-out;
+// `;
 
-const Title = styled.h2`
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  background: var(--primary-light);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-`;
+// const Title = styled.h2`
+//   font-size: 48px;
+//   font-weight: 700;
+//   margin-bottom: 10px;
+//   background: var(--primary-light);
+//   -webkit-background-clip: text;
+//   -webkit-text-fill-color: transparent;
+//   background-clip: text;
+// `;
 
-const Subtitle = styled.p`
-  font-size: 18px;
-  color: #9ca3af;
-  margin: 0;
-`;
+// const Subtitle = styled.p`
+//   font-size: 18px;
+//   color: #9ca3af;
+//   margin: 0;
+// `;
 
 const Content = styled.div`
   display: flex;
@@ -251,61 +251,61 @@ const Content = styled.div`
   width: 100%;
 `;
 
-const ProjectCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 900px;
-  width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #111;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-  animation: ${fadeIn} 0.8s ease-out;
-`;
+// const ProjectCard = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   max-width: 900px;
+//   width: 100%;
+//   border-radius: 12px;
+//   overflow: hidden;
+//   background: #111;
+//   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+//   animation: ${fadeIn} 0.8s ease-out;
+// `;
 
-const Thumbnail = styled.img`
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
+// const Thumbnail = styled.img`
+//   width: 100%;
+//   height: 500px;
+//   object-fit: cover;
 
-  @media (max-width: 1024px) {
-    height: auto;
-  }
-`;
+//   @media (max-width: 1024px) {
+//     height: auto;
+//   }
+// `;
 
-const Info = styled.div`
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+// const Info = styled.div`
+//   padding: 20px;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 12px;
 
-  h3 {
-    font-size: 24px;
-    margin: 0;
-  }
+//   h3 {
+//     font-size: 24px;
+//     margin: 0;
+//   }
 
-  p {
-    color: #d1d5db;
-    font-size: 16px;
-    line-height: 1.4;
-  }
-`;
+//   p {
+//     color: #d1d5db;
+//     font-size: 16px;
+//     line-height: 1.4;
+//   }
+// `;
 
-const Links = styled.div`
-  display: flex;
-  gap: 16px;
+// const Links = styled.div`
+//   display: flex;
+//   gap: 16px;
 
-  a {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: #60a5fa;
-    text-decoration: none;
-    font-weight: 500;
-    transition: opacity 0.2s ease;
+//   a {
+//     display: flex;
+//     align-items: center;
+//     gap: 6px;
+//     color: #60a5fa;
+//     text-decoration: none;
+//     font-weight: 500;
+//     transition: opacity 0.2s ease;
 
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-`;
+//     &:hover {
+//       opacity: 0.8;
+//     }
+//   }
+// `;

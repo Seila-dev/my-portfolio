@@ -8,7 +8,7 @@ import { useEffect, useState } from "react"
 import cvDownload from '../../assets/ErickOliveiraRodrigues_DevWebFullStack_PDF.pdf'
 import { TechSlider } from "../TechSlider"
 import About from "../About"
-import MainProject from "../MainProject"
+// import MainProject from "../MainProject"
 
 interface MouseMovements {
     clientX: number;
