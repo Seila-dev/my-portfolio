@@ -274,6 +274,7 @@ const Introduction = styled.main`
     }
 
     @media(max-width: 768px){
+            background-position: 60%;
         padding: 40px 10px 10px 10px;
         // justify-content: center;
         .info h1{
@@ -296,7 +297,6 @@ const Introduction = styled.main`
       &::after {
         background-color: rgba(0, 0, 0, 0.2); 
         }
-        background-position: 60%;
 
 
         .info h1{
