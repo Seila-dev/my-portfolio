@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 import cvDownload from '../../assets/ErickOliveiraRodrigues_DevWebFullStack_PDF.pdf'
 import { TechSlider } from "../TechSlider"
 import About from "../About"
+import Header from "../header"
 // import MainProject from "../MainProject"
 
 interface MouseMovements {
@@ -235,10 +236,14 @@ const Introduction = styled.main`
         height: 20px;
         margin-right: 10px;
     }
-    .info .links.second-cta{
-        background: transparent;
-        max-width: fit-content;
+    .links.second-cta {
+      background: transparent;
+      border: 2px solid var(--primary);
+      max-width: fit-content;
 
+      &:hover {
+        background: var(--primary);
+        }
     }
 
     .arrow {

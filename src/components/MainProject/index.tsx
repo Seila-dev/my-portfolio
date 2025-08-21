@@ -1,15 +1,17 @@
 import styled from "styled-components";
 import { Code2, SquareDashedMousePointer } from "lucide-react";
+import ProjectImage1 from "../../assets/watchlist.png";
 import ProjectImage2 from "../../assets/watchlist-2.webp";
 import ProjectImage3 from "../../assets/watchlist-3.png";
-import image from "../../assets/Subaru, Rem and Puck.jpg";
+import cover from "../../assets/watchlist-4.webp";
 import MediaGallery from "../MediaGallery";
 
 const content = {
   id: "1",
   title: "Watchlist",
-  coverImage: image,
-  description: "Gerencie filmes, séries, animes, mangás e jogos de forma fácil. Adicione capas, anotações e acompanhe seu progresso com segurança.",
+  coverImage: cover,
+  description: "Plataforma multimídia para organizar e explorar filmes, séries, animes, mangás e jogos em um só lugar. Foco em personalização, interação com a comunidade e centralização de conteúdo. Lidero a equipe com + de 6 devs e 2 designers construindo um produto robusto e escalável com foco em UX e inclusão digital.",
+  note: "Somos uma startup com 6 devs e 2 designers (em breve +2 no time) criando uma plataforma multimídia de entrentenimento. A ideia nasceu da falta de um lugar inclusivo e completo pra acompanhar tudo o que a gente curte, de filmes a mangás.",
   startDate: "2025-06",
   finishDate: "Até o momento",
   repoLink: "https://github.com/Seila-dev/watchlist",
@@ -58,6 +60,9 @@ const Section = styled.section`
 
   @media (max-width: 1024px) {
     padding: 40px 20px;
+        &::before{
+      z-index: 0;
+    }
  }
 `;
 
@@ -66,10 +71,10 @@ const BackgroundBlur = styled.div<{ bg?: string }>`
   inset: 0;
   background-image: ${({ bg }) => (bg ? `url(${bg})` : "none")};
   background-size: cover;
-  background-position: center;
-  opacity: 0.2;
-  filter: blur(8px);
-  transform: scale(1.05);
+  background-position: top;
+  opacity: 0.24;
+  filter: blur(0px);
+  transform: scale(1.00);
 `;
 
 const Container = styled.div`
@@ -227,6 +232,10 @@ const ActionMethods = styled.div`
         color: white;
         }
     }
+
+    @media(max-width: 720px){
+      flex-direction: column;
+    }
 `
 
 // const MediaContent = styled.div`
@@ -271,6 +280,7 @@ export default function MainProject() {
 
           {/* Descrição */}
           {content.description && <Description>{content.description}</Description>}
+          {/* {content.description && <Description>{content.note}</Description>} */}
 
           {/* Datas */}
           <Dates>
@@ -297,7 +307,7 @@ export default function MainProject() {
         </Content>
         <Content>
           <MediaGallery
-            images={[ProjectImage2, ProjectImage3, content.coverImage]}
+            images={[ProjectImage1, ProjectImage2, ProjectImage3]}
           />
         </Content>
       </Container>

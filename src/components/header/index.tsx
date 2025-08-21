@@ -4,7 +4,11 @@ import { useState, useEffect } from "react";
 import { Home, User, Folder, SparklesIcon } from "lucide-react";
 import styled, { css } from "styled-components";
 
-export default function Header() {
+interface HeaderProps {
+  isModalOpen: boolean;
+}
+
+export default function Header({ isModalOpen }: HeaderProps){
     const [activeSection, setActiveSection] = useState<string>("");
 
     useEffect(() => {
@@ -36,7 +40,7 @@ export default function Header() {
     }, []);
 
     return (
-        <Container>
+        <Container isModalOpen={isModalOpen}>
             <Nav>
                 <TooltipWrapper>
                     <NavItem href="#home" $active={activeSection === "home"}>
@@ -70,7 +74,7 @@ export default function Header() {
 }
 
 
-export const Container = styled.header`
+export const Container = styled.header<{ isModalOpen: boolean }>`
   width: fit-content;
   position: fixed;
   left: 50%;
@@ -86,8 +90,15 @@ export const Container = styled.header`
   border-radius: 1rem;
   border: 1px solid gray;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 50;
+  z-index: 9;
   transition: opacity 0.4s ease-in-out;
+
+    ${({ isModalOpen }) =>
+    isModalOpen &&
+    css`
+      visibility: hidden;
+      pointer-events: none;
+    `}
 
   &:hover {
     opacity: 1;
