@@ -1,88 +1,155 @@
-import styled from 'styled-components';
-import emailLogo from '../../assets/emaillogo.png'
-import { useState } from 'react';
+"use client";
 
-export const Header = () => {
-    const [active, setActive] = useState(false);
-    
-    function copyText() {
-        navigator.clipboard.writeText("erickoliveira3975@gmail.com");
-        window.alert("Email copiado com sucesso.")
-    }
+import { useState, useEffect } from "react";
+import { Home, User, Folder, SparklesIcon } from "lucide-react";
+import styled, { css } from "styled-components";
+
+export default function Header() {
+    const [activeSection, setActiveSection] = useState<string>("");
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = ["home", "about", "projects", "skills"];
+            const scrollPosition = window.scrollY + 100;
+
+            for (let id of sections) {
+                const el = document.getElementById(id);
+                if (el) {
+                    const offsetTop = el.offsetTop;
+                    const offsetHeight = el.offsetHeight;
+
+                    if (
+                        scrollPosition >= offsetTop &&
+                        scrollPosition < offsetTop + offsetHeight
+                    ) {
+                        setActiveSection(id);
+                        break;
+                    }
+                }
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
-        <HeaderElement>
-            <h1><a href="#">Desenvolvedor Full Stack</a></h1>
+        <Container>
+            <Nav>
+                <TooltipWrapper>
+                    <NavItem href="#home" $active={activeSection === "home"}>
+                        <Home size={18} />
+                    </NavItem>
+                    <TooltipText>Início</TooltipText>
+                </TooltipWrapper>
 
-            <button onMouseEnter={() => setActive(true)}
-                    onMouseLeave={() => setActive(false)}
-                    onClick={copyText} className='btn'>
-                <img src={emailLogo} alt="email logo"/>
-                {active === false && (
-                    <p>erickoliveira3975@gmail.com</p>
-                )}
-                {active === true && (
-                    <p>Clique para copiar o email</p>
-                )}
-                
-            </button>
-        </HeaderElement>
-    )
+                <TooltipWrapper>
+                    <NavItem href="#about" $active={activeSection === "about"}>
+                        <User size={18} />
+                    </NavItem>
+                    <TooltipText>Sobre</TooltipText>
+                </TooltipWrapper>
+
+                <TooltipWrapper>
+                    <NavItem href="#projects" $active={activeSection === "projects"}>
+                        <Folder size={18} />
+                    </NavItem>
+                    <TooltipText>Projetos</TooltipText>
+                </TooltipWrapper>
+                <TooltipWrapper>
+                    <NavItem href="#skills" $active={activeSection === "skills"}>
+                        <SparklesIcon size={18} />
+                    </NavItem>
+                    <TooltipText>Habilidades</TooltipText>
+                </TooltipWrapper>
+            </Nav>
+        </Container>
+    );
 }
 
-const HeaderElement = styled.header`
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-    padding: 30px 100px;
 
-    h1{
-        animation: fade-up 0.5s 0.4s backwards;
-    }
+export const Container = styled.header`
+  width: fit-content;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  top: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0.7;
+  padding: 0.5rem 1rem;
+  background-color: #171717;
+  color: white;
+  border-radius: 1rem;
+  border: 1px solid gray;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  transition: opacity 0.4s ease-in-out;
 
-    button{
-        padding: 5px 10px;
-        outline: none;
-        border: none;
-        background: transparent;
-        color: white;
-        font-size: 20px;
-        display: flex;
-        align-items: center;
-    }
-    button img{
-        width: 30px;
-        margin-right: 10px;
-    }
-    button:hover{
-        background: #ccc;
-        // opacity: 0.6;
-        color: black;
-        cursor: pointer;
-    }
-    .menu-btn{
-        width: 70px;
-        cursor: pointer;
-    }
+  &:hover {
+    opacity: 1;
+}
+`;
 
-    @media(max-width: 768px){
-        padding: 10px;
-        flex-direction: column;
-        margin-top: 10px;
-        h1{
-            font-size: 25px;
-        }
-        .menu-btn{
-            width: 50px;
-        }
-        .btn{
-            font-size: 14px;
-        }
-    }
-    @media(max-widtH: 450px){
-        h1{
-            font-size: 19px;
-        }
-    }
-`
+export const Nav = styled.nav`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+`;
+
+interface NavItemProps {
+    $active: boolean;
+}
+
+export const TooltipWrapper = styled.div`
+  position: relative;
+  display: inline-block;
+
+  &:hover span {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+`;
+
+export const TooltipText = styled.span`
+  position: absolute;
+  bottom: -80%;
+  background-color: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+  z-index: 10;
+`;
+
+export const NavItem = styled.a<NavItemProps>`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 10px 10px 0 0;
+  transition: background-color 0.2s;
+
+ ${({ $active }) =>
+        $active &&
+        css`
+      background-color: rgba(10, 60, 110, 0.7);
+      color: #1fb3eeff;
+      border-bottom: 2px solid #1fb3eeff; 
+      
+    `}
+
+  &:hover {
+    background-color: #3f3f46;
+  }
+`;

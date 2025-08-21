@@ -7,7 +7,7 @@ export const Skills = () => {
 
     return (
         <>
-        <SkillsSection>
+        <SkillsSection id="skills">
             <h2>Habilidades</h2>
             <SkillsHeader>
                 <button className="btn">Full Stack</button>
