@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import backgroundVideo from '../../assets/plaiades-initial.png'
+import backgroundVideo from '../../assets/plaiades-final.png'
 import githubIcon from '../../assets/github.png'
 import linkedinIcon from '../../assets/linkedin.png'
 import whatsappIcon from '../../assets/whatsapp.png'
@@ -168,7 +168,7 @@ const Introduction = styled.main`
   background-image: url(${backgroundVideo});
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center 100%;
+  background-position: center 20%;
   background-color: transparent;
 
   &::after {
@@ -178,7 +178,7 @@ const Introduction = styled.main`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.710); /* Ajuste de opacidade do fundo */
+    background-color: rgba(0, 0, 0, 0.410); /* Ajuste de opacidade do fundo */
     z-index: -1; /* Camada de fundo */
   }
   &::before {
@@ -274,8 +274,7 @@ const Introduction = styled.main`
     }
 
     @media(max-width: 768px){
-        padding: 10px;
-        margin-top: 40px;
+        padding: 40px 10px 10px 10px;
         // justify-content: center;
         .info h1{
             font-size: 40px;
@@ -295,8 +294,9 @@ const Introduction = styled.main`
     }
     @media(max-width: 380px){
       &::after {
-        background-color: rgba(0, 0, 0, 0.6); /* Ajuste de opacidade do fundo */
-  }
+        background-color: rgba(0, 0, 0, 0.2); 
+        }
+        background-position: 60%;
 
 
         .info h1{

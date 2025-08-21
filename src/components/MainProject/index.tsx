@@ -12,6 +12,8 @@ const content = {
   description: "Gerencie filmes, séries, animes, mangás e jogos de forma fácil. Adicione capas, anotações e acompanhe seu progresso com segurança.",
   startDate: "2025-06",
   finishDate: "Até o momento",
+  repoLink: "https://github.com/Seila-dev/watchlist",
+  demoLink: "https://your-watchlist.vercel.app/",
   rating: 4.5,
   categories: [
     { categoryId: "1", category: { name: "Ficção" } },
@@ -260,7 +262,7 @@ export default function MainProject() {
         <Content>
           {content.finishDate && (
             <Status>
-              <span>Tech Lead - Fullstack Dev.</span>
+              <span>Em desenvolvimento</span>
             </Status>
           )}
           <Header>
@@ -277,11 +279,11 @@ export default function MainProject() {
 
           {/*Demonstração e repo link*/}
           <ActionMethods>
-            <a href="link 1" className="links">
+            <a href={content.demoLink} className="links" target="BLANK" rel="noopener noreferrer">
               <SquareDashedMousePointer size={18} />
               Demonstração
             </a>
-            <a href="link 1" className="links secondary">
+            <a href={content.repoLink} className="links secondary" target="BLANK" rel="noopener noreferrer">
               <Code2 size={18} />
               Repositório
             </a>
