@@ -155,17 +155,19 @@
 import styled, { keyframes } from "styled-components";
 import { Github, ExternalLink } from "lucide-react";
 import ProjectImage from "../../assets/watchlist.png";
+import MainProject from "../MainProject";
 
 const Projects = () => {
   return (
     <AboutSection id="projects">
-      <Header>
+      {/* <Header>
         <Title>Projeto principal</Title>
         <Subtitle>Desenvolvedor Full Stack & Tech Lead</Subtitle>
-      </Header>
+      </Header> */}
 
       <Content>
-        <ProjectCard>
+        <MainProject />
+        {/* <ProjectCard>
           <Thumbnail
             src={ProjectImage} // substitua pela sua imagem
             alt="Preview do projeto"
@@ -192,7 +194,7 @@ const Projects = () => {
               </a>
             </Links>
           </Info>
-        </ProjectCard>
+        </ProjectCard> */}
       </Content>
     </AboutSection>
   );
@@ -210,15 +212,16 @@ const fadeIn = keyframes`
 const AboutSection = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 60px 150px;
+//   padding: 60px 150px;
+// padding: 60px 0;
   min-height: 100vh;
   background: linear-gradient(to top, #000 0%, #214 50%, #000 100%);
   color: white;
   position: relative;
 
-  @media (max-width: 1024px) {
-    padding: 40px 20px;
-  }
+//   @media (max-width: 1024px) {
+//     padding: 40px 20px;
+//   }
 `;
 
 const Header = styled.div`

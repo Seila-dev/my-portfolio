@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import backgroundVideo from '../../assets/subaru_gluttonyif_edited-1.png'
+import backgroundVideo from '../../assets/plaiades-initial.png'
 import githubIcon from '../../assets/github.png'
 import linkedinIcon from '../../assets/linkedin.png'
 import whatsappIcon from '../../assets/whatsapp.png'
@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 import cvDownload from '../../assets/ErickOliveiraRodrigues_DevWebFullStack_PDF.pdf'
 import { TechSlider } from "../TechSlider"
 import About from "../About"
+import MainProject from "../MainProject"
 
 interface MouseMovements {
     clientX: number;
@@ -107,6 +108,7 @@ export const Main = () => {
 
             {/* <Project description="descrição foda" desktopImg={backgroundVideo} liveLink="linkzao" mobileImg={backgroundVideo} name="titulo" repoLink="link" technologies={[]} /> */}
             <Projects />
+            {/* <MainProject /> */}
             {/* <Skills /> */}
 
 
@@ -166,7 +168,7 @@ const Introduction = styled.main`
   background-image: url(${backgroundVideo});
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center 10%;
+  background-position: center 100%;
   background-color: transparent;
 
   &::after {
@@ -176,7 +178,7 @@ const Introduction = styled.main`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.510); /* Ajuste de opacidade do fundo */
+    background-color: rgba(0, 0, 0, 0.710); /* Ajuste de opacidade do fundo */
     z-index: -1; /* Camada de fundo */
   }
   &::before {
