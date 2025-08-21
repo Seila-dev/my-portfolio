@@ -8,7 +8,6 @@ import { useEffect, useState } from "react"
 import cvDownload from '../../assets/ErickOliveiraRodrigues_DevWebFullStack_PDF.pdf'
 import { TechSlider } from "../TechSlider"
 import About from "../About"
-import Header from "../header"
 // import MainProject from "../MainProject"
 
 interface MouseMovements {

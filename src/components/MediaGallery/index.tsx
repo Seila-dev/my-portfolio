@@ -159,7 +159,7 @@ const MediaGallery = ({ images }: MediaTypes) => {
         },
     });
 
-    const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    useCallback((e: KeyboardEvent) => {
         if (e.key === "Escape") setSelectedImage(null);
     }, []);
 
@@ -176,7 +176,7 @@ const MediaGallery = ({ images }: MediaTypes) => {
         }
 
         return () => {
-            document.body.style.overflow = ''; // limpa ao desmontar
+            document.body.style.overflow = ''; 
             document.removeEventListener("keydown", handleKeyDown);
         };
     }, [selectedImage]);
