@@ -8,7 +8,7 @@ import { useEffect, useState } from "react"
 import cvDownload from '../../assets/ErickOliveiraRodrigues_DevWebFullStack_PDF.pdf'
 import { TechSlider } from "../TechSlider"
 import About from "../About"
-import { SocialMedia } from "../SocialMedia"
+import { SocialFooter } from "../SocialMedia"
 // import MainProject from "../MainProject"
 
 interface MouseMovements {
@@ -109,7 +109,7 @@ export const Main = () => {
 
             {/* <Project description="descrição foda" desktopImg={backgroundVideo} liveLink="linkzao" mobileImg={backgroundVideo} name="titulo" repoLink="link" technologies={[]} /> */}
             <Projects />
-            <SocialMedia />
+            <SocialFooter />
             {/* <MainProject /> */}
             {/* <Skills /> */}
 
