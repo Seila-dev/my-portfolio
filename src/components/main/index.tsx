@@ -1,12 +1,15 @@
 import styled from "styled-components"
-import backgroundVideo from '../../assets/background.mp4'
+import backgroundVideo from '../../assets/plaiades-final.png'
 import githubIcon from '../../assets/github.png'
 import linkedinIcon from '../../assets/linkedin.png'
 import whatsappIcon from '../../assets/whatsapp.png'
-import { Projects } from "../projects"
-import { Skills } from "../skills"
+import Projects from "../projects"
 import { useEffect, useState } from "react"
 import cvDownload from '../../assets/ErickOliveiraRodrigues_DevWebFullStack_PDF.pdf'
+import { TechSlider } from "../TechSlider"
+import About from "../About"
+import { SocialMedia } from "../SocialMedia"
+// import MainProject from "../MainProject"
 
 interface MouseMovements {
     clientX: number;
@@ -28,15 +31,35 @@ export const Main = () => {
         }
     }, [])
 
+    useEffect(() => {
+        const handleMouseMove = (e: MouseMovements) => {
+            const { clientX, clientY } = e;
+            // Move o fundo de forma interativa
+            const offsetX = (clientX - window.innerWidth / 2) * 0.05;
+            const offsetY = (clientY - window.innerHeight / 2) * 0.05;
+            document.querySelector('.character img')?.setAttribute(
+                'style',
+                `transform: translate(${offsetX}px, ${offsetY}px)`
+            );
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, []);
+
     return (
         <>
-            <Introduction id="introduction">
+            <Introduction id="home">
                 <div className="info">
-                    <p>Este é um portifólio de</p>
+                    <p>Meu nome é</p>
                     <h1>Erick Rodrigues</h1>
-                    <span> &gt; Desenvolvedor Full Stack</span>
+                    <span> &gt; Desenvolvedor Full Stack | Tech Lead</span>
                     <div className="cv-style">
-                        <a href={cvDownload} className="download-cv" download>Baixar Currículo</a>
+                        <a href={cvDownload} className="download-cv links" download>Baixar Currículo</a>
+                        <a href="https://www.linkedin.com/in/erickrodrigues-dev/" className="second-cta links" target="_blank" rel="noopener noreferrer">
+                            <img src={linkedinIcon} alt="Icon Linkedin" />
+                            Me encontre no LinkedIn
+                        </a>
                     </div>
                 </div>
 
@@ -44,35 +67,56 @@ export const Main = () => {
                     <p>↓</p>
                 </div>
                 <div className="social-media">
-                    <a href="https://github.com/Seila-dev" className="logo" target="BLANK">
+                    <a href="https://github.com/Seila-dev" className="logo" target="_blank" rel="noopener noreferrer">
                         <img src={githubIcon} alt="github icon" />
                     </a>
-                    <a href="https://www.linkedin.com/in/erickrodrigues-dev/" className="logo" target="BLANK">
+                    <a href="https://www.linkedin.com/in/erickrodrigues-dev/" className="logo" target="_blank" rel="noopener noreferrer">
                         <img src={linkedinIcon} alt="linkedin icon" />
                     </a>
-                    <a href="https://api.whatsapp.com/send?phone=5521980798925" className="logo" target="BLANK">
+                    <a href="https://api.whatsapp.com/send?phone=5521980798925" className="logo" target="_blank" rel="noopener norefereer">
                         <img src={whatsappIcon} alt="whatsapp icon" />
                     </a>
                 </div>
             </Introduction>
-            <About id="about">
+            <SectionTransition />
+            <TechSlider />
+            {/* <About id="about">
                 <h2>Sobre mim</h2>
-                <div>
-                    <p className="description">Desenvolvedor Full Stack com foco em criar <strong>soluções digitais escaláveis, performáticas e centradas na experiência do usuário.</strong></p>
-                    <br />
-                    <p className="description">Tenho experiência prática em projetos reais e entregas sob demanda, atuando em todas as camadas da aplicação, do backend robusto ao frontend moderno. Trabalho com foco em boas práticas, <strong>arquitetura limpa e interfaces bem estruturadas</strong> que entregam <strong>valor</strong> de verdade.</p>
-                    <br />
-                    <p className="description">Atualmente, aprofundo minha expertise por meio de mentorias individuais e aplico esse conhecimento em contextos que exigem agilidade, responsabilidade e resolução de problemas reais. Estou sempre atualizado com as tecnologias do mercado e busco constantemente desafios que me façam evoluir como profissional.</p>
-                    <br />
-                    <p className="description">Minhas especialidades: <strong>Next.js, React.js, TypeScript, Javascript, Nest.js, Node.js, Express, PostgreSQL, Docker, Git & Github, Styled Components/Tailwind </strong></p>
+                <div className="content">
+                    <div className="text">
+                        <p className="description">
+                            Desenvolvedor Full Stack com foco em criar <strong>soluções digitais escaláveis, performáticas e centradas na experiência do usuário.</strong>
+                        </p>
+                        <br />
+                        <p className="description">
+                            Tenho experiência prática em projetos reais e entregas sob demanda, atuando em todas as camadas da aplicação...
+                        </p>
+                        <br />
+                        <p className="description">
+                            Atualmente, aprofundo minha expertise por meio de mentorias individuais...
+                        </p>
+                        <br />
+                        <p className="description">
+                            Minhas especialidades: <strong>Next.js, React.js, TypeScript, Javascript, Nest.js...</strong>
+                        </p>
+                    </div>
+                    <div className="character">
+                        <img src={characterPng} alt="Personagem Subaru" />
+                    </div>
                 </div>
-            </About>
+            </About> */}
+            <About />
+
+            {/* <Project description="descrição foda" desktopImg={backgroundVideo} liveLink="linkzao" mobileImg={backgroundVideo} name="titulo" repoLink="link" technologies={[]} /> */}
             <Projects />
-            <Skills />
+            <SocialMedia />
+            {/* <MainProject /> */}
+            {/* <Skills /> */}
 
 
             <BackgroundPrompt>
-                <video src={backgroundVideo} autoPlay muted loop></video>
+                {/* <video src={backgroundVideo} autoPlay muted loop></video> */}
+                {/* <img src={backgroundVideo} alt="" /> */}
             </BackgroundPrompt>
             <CursorDot style={{ left: `${cursorPosition.x}px`, top: `${cursorPosition.y}px` }}></CursorDot>
             <CursorOutline style={{ left: `${cursorPosition.x}px`, top: `${cursorPosition.y}px` }}></CursorOutline>
@@ -115,19 +159,51 @@ const CursorOutline = styled.div`
 `
 
 const Introduction = styled.main`
-    display: flex;
-    align-items: center;
-    padding: 150px;
-    height: 70vh;
-    margin-bottom: 150px;
+  display: flex;
+  align-items: center;
+  padding: 0 150px;
+  height: 78vh;
+  margin-bottom: 0; 
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background-image: url(${backgroundVideo});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 20%;
+  background-color: transparent;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.410); /* Ajuste de opacidade do fundo */
+    z-index: -1; /* Camada de fundo */
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);
+    z-index: 2; /* Camada de transição */
+    pointer-events: none;
+  }
     .info p{
         font-size: 24px;
+        color: #c2c2c2;
     }
     .info h1{
         font-size: 60px;
+        margin-bottom: 10px;
     }
     .info span{
-        color: var(--light-green);
+        color: var(--primary-light);
         font-size: 24px;
     }
     .info *{
@@ -136,26 +212,41 @@ const Introduction = styled.main`
     .info .cv-style{
         margin-top: 25px;
     }
-    .info .download-cv{
-        background: white;
-        background: #000;
+    .info .links{
+        background: var(--primary);
+        color: white;
         width: 100%;
         max-width: 200px;
         display: flex;
-        opacity: 0.9;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--primary);
         border-radius: 5px;
         font-weight: 600;
-        padding: 10px 20px;
+        padding: 12px 24px;
+        margin: 10px 0;
         cursor: pointer;
-        color: var(--light-green);
         animation: fade-up 0.5s 0.4s backwards;
         transition: 0.15s ease-in;
         &:hover{
-            background: #ccc2;
+            background: var(--primary-light);
+        }
+    }
+    .info .links img{
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+    .links.second-cta {
+      background: transparent;
+      border: 2px solid var(--primary);
+      max-width: fit-content;
+
+      &:hover {
+        background: var(--primary);
         }
     }
 
-    
     .arrow {
         position: absolute;
         left: 50%;
@@ -169,11 +260,11 @@ const Introduction = styled.main`
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background: white;
+        background-color: white;
         border-radius: 10px 0 0 10px;
         position: absolute;
         right: 0;
-        z-index: 9;
+        z-index: 999999;
         animation: fade-up 0.5s 0.4s backwards;
     }
     .social-media .logo{
@@ -184,9 +275,14 @@ const Introduction = styled.main`
         height: 50px;
     }
 
+    @media (max-width: 1024px) {
+        padding: 40px 20px;
+    }
+
     @media(max-width: 768px){
-        padding: 20px;
-        justify-content: center;
+            background-position: 60%;
+        padding: 40px 10px 10px 10px;
+        // justify-content: center;
         .info h1{
             font-size: 40px;
         }
@@ -196,7 +292,7 @@ const Introduction = styled.main`
             width: 100%;
             justify-content: center;
             flex-direction: row;
-            background: gray;
+            background: rgba(134, 1, 243, 0.26);
             border-radius: 0;
         }
         .arrow {
@@ -204,6 +300,12 @@ const Introduction = styled.main`
         }
     }
     @media(max-width: 380px){
+    background-image: url(${backgroundVideo});
+      &::after {
+        background-color: rgba(0, 0, 0, 0.2); 
+        }
+
+
         .info h1{
             font-size: 32px;
         }
@@ -216,57 +318,70 @@ const Introduction = styled.main`
     }
 `
 
-const About = styled.section`
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    margin: 250px 0;
-    animation: fade-up 0.5s 0.4s backwards;
-    h2{
-        text-align: center;
-        margin-bottom: 50px;
-        font-size: 40px;
-        font-weight: 400;
-    }
-    div{
-        width: 60%;
-        padding: 0px;
-    }
-    div p{
-        font-size: 30px;
-    }
+// const About = styled.section`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   padding: 60px 30px;
+//   min-height: 100vh;
+//   background-color: black;
+//   color: white;
 
-    p.paragraph{
-        margin-bottom: 20px;
-    }
+//   h2 {
+//     text-align: center;
+//     margin-bottom: 50px;
+//     font-size: 40px;
+//     font-weight: 400;
+//   }
 
-    @media(max-width: 1024px){
-        p.paragraph{
-            width: 100%;
-            font-size: 25px;
-        }
-    }
-    @media(max-width: 768px){
-        p.paragraph{
-            font-size: 25px;
-            width: 100%;
-        }
-        div {
-            width: 100%;
-        }
-    }
-    @media(max-width: 425px){
-        div p{
-            font-size: 20px;
-        }
-        div {
-            width: 100%;
-        }
-    }
-`
+//   .content {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     width: 100%;
+//     max-width: 1200px;
+//     gap: 50px;
+//   }
+
+//   .text {
+//     flex: 1;
+//   }
+
+//   .text p {
+//     font-size: 24px;
+//     line-height: 1.6;
+//     margin-bottom: 20px;
+//   }
+
+//   .character {
+//     flex: 1;
+//     display: flex;
+//     justify-content: center;
+//     align-items: flex-end;
+//   }
+
+//   .character img {
+//     max-height: 500px;
+//     width: auto;
+//     object-fit: contain;
+//   }
+
+//   @media (max-width: 1024px) {
+//     .content {
+//       flex-direction: column;
+//       align-items: center;
+//     }
+
+//     .character img {
+//       max-height: 350px;
+//       margin-top: 30px;
+//     }
+
+//     .text p {
+//       font-size: 20px;
+//     }
+//   }
+// `;
 
 const BackgroundPrompt = styled.div`
     position: fixed;
@@ -276,12 +391,21 @@ const BackgroundPrompt = styled.div`
     width: 100%;
     height: 100%;
     background-color: black;
-    video{
+    img{
         // height: 100%;
         min-width: 100%;
         min-height: 100%;
         width: auto;
         height: auto;
-        opacity: 0.175;
+        opacity: 0.675;
     }
 `
+
+const SectionTransition = styled.div`
+  position: relative;
+  width: 100%;
+  height: 0px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+  z-index: 1;
+  margin-top: -1px; /* sobrepõe parte do conteúdo anterior */
+`;

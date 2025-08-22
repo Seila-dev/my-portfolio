@@ -6,6 +6,8 @@ export const GlobalStyle = createGlobalStyle`
         --dark-green: #00b193;
         --blue: #00b6ff;
         --white: #fff;
+        --primary: #8247fa;
+        --primary-light: #a16eff;
     }
 
     *{
@@ -26,6 +28,11 @@ export const GlobalStyle = createGlobalStyle`
             cursor: inherit;
         }
     }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
 
     a{
         color: #fff;

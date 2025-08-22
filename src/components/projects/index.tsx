@@ -1,150 +1,77 @@
-import styled from "styled-components"
-import { pinnedProjectsData } from "../../mocks/pinnedProjectsData"
-import { projectsData } from "../../mocks/projectsData"
-import { Project } from "../project"
+import styled, { keyframes } from "styled-components";
+import MainProject from "../MainProject";
+import { CarouselContainer2 } from "../ProjectsCarousel";
 
-export const Projects = () => {
-    
+const Projects = () => {
 
-    return (
-        <ProjectsSection id="projects">
-            <h2>Projetos</h2>
-            <Container>
-                <Divisor><div className="line b1"></div><span className="span-pin">Projetos em destaque</span> <div className="line b2"></div></Divisor>
-                <div className="pinned-projects">
-                    {pinnedProjectsData.map((project, index) => (
-                        <Project key={index} {...project} />
-                    ))}
-                </div>
-                <div className="progress-projects">
-                    <Divisor><div className="line b1"></div><span className="span-pin">Outros projetos</span> <div className="line b2"></div></Divisor>
-                    <div className="projects">
-                        {projectsData.map((project, index) => (
-                            <Project key={index} {...project} />
-                        ))}
-                    </div>
-                </div>
-            </Container>
-        </ProjectsSection>
-    )
-}
+  return (
+    <Section id="projects">
+      <Content>
+        <MainProject />
 
-const ProjectsSection = styled.section`
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 150px;
-    animation: fade-up 0.5s 0.4s backwards;
-    
-    h2{
-        text-align: center;
-        margin-bottom: 50px;
-        font-size: 40px;
-        font-weight: 400;
-    }
-    
-`
+        <OtherProjectsSection>
+          <Header>
+            <Title>Side projects</Title>
+            <Subtitle>Outros projetos durante a carreira</Subtitle>
+          </Header>
+          <CarouselContainer2 />
+        </OtherProjectsSection>
+      </Content>
+    </Section>
+  );
+};
 
-const Divisor = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    .span-pin{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        margin: 30px;
-        width: 200px;
-        text-align: center;
-        font-style: italic;
-    }
-    .line{
-        background: #ccc;
-        width: 200px;
-        height: 1px;
-    }
-`
+export default Projects;
 
-const Container = styled.div`
-    padding: 10px;
-    .pinned-projects, .projects{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    .pinned-projects{
-        margin-bottom: 50px;
-    }
-    .project{
-        position: relative;
-        text-align: center;
-        margin-bottom: 20px;
-        .descriptionText{
-            padding: 5px 8%;
-        }
-        .descriptionText p{
-        }
-        .links{
-            margin-top: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            width: 100%;
-            align-items: center;
-        }
-        .links a{
-            width: fit-content;
-        }
-        .links a:hover{
-            border-bottom: 1px solid white;
-        }
-        .links .description{
-            cursor: pointer;
-        }
-        img{
-            width: 80%;
-            margin-top: 10px;
-            user-select: none;
-        }
-        .mobile-img{
-            position: absolute;
-            right: 10px;
-            top: 125px;
-            width: 30%;
-            z-index: 5;
-        }
-        .technologies{
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        .tech-box{
-            padding: 0 20px;
-            border-radius: 5px;
-        }
-        .technologies .logo{
-            width: 40px;
-            border: 1px solid black;
-            border-radius: 5px;
-            padding: 3px;
-            margin: 10px 5px;
-            background: white;
-            opacity: 0.8;
-        }
-        .technologies .logo:hover{
-            opacity: 1;
-        }
-    }
+const fadeIn = keyframes`
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+`;
 
-    @media(max-width: 768px){
-        
-        .pinned-projects, .projects{
-            grid-template-columns: 1fr;
-        }
-        .project{
-            margin-bottom: 70px;
-        }
-    }
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+  color: white;
+  position: relative;
+`;
 
-`
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+`;
+
+const OtherProjectsSection = styled.div`
+  margin-top: 60px;
+  min-height: 100vh;
+  padding: 0px 150px;
+
+    @media (max-width: 1024px) {
+      padding: 40px 20px;
+    }
+`;
+
+const Header = styled.div`
+    margin-bottom: 60px;
+    animation: ${fadeIn} 0.8s ease-out;
+`;
+
+const Title = styled.h2`
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: var(--primary-light);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+`;
+
+const Subtitle = styled.p`
+    font-size: 18px;
+    color: #9ca3af;
+    margin: 0;
+`;
