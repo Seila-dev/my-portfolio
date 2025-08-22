@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 import cvDownload from '../../assets/ErickOliveiraRodrigues_DevWebFullStack_PDF.pdf'
 import { TechSlider } from "../TechSlider"
 import About from "../About"
+import { SocialMedia } from "../SocialMedia"
 // import MainProject from "../MainProject"
 
 interface MouseMovements {
@@ -55,7 +56,7 @@ export const Main = () => {
                     <span> &gt; Desenvolvedor Full Stack | Tech Lead</span>
                     <div className="cv-style">
                         <a href={cvDownload} className="download-cv links" download>Baixar Currículo</a>
-                        <a href="https://www.linkedin.com/in/erickrodrigues-dev/" className="second-cta links" target="BLANK" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/in/erickrodrigues-dev/" className="second-cta links" target="_blank" rel="noopener noreferrer">
                             <img src={linkedinIcon} alt="Icon Linkedin" />
                             Me encontre no LinkedIn
                         </a>
@@ -66,13 +67,13 @@ export const Main = () => {
                     <p>↓</p>
                 </div>
                 <div className="social-media">
-                    <a href="https://github.com/Seila-dev" className="logo" target="BLANK">
+                    <a href="https://github.com/Seila-dev" className="logo" target="_blank" rel="noopener noreferrer">
                         <img src={githubIcon} alt="github icon" />
                     </a>
-                    <a href="https://www.linkedin.com/in/erickrodrigues-dev/" className="logo" target="BLANK">
+                    <a href="https://www.linkedin.com/in/erickrodrigues-dev/" className="logo" target="_blank" rel="noopener noreferrer">
                         <img src={linkedinIcon} alt="linkedin icon" />
                     </a>
-                    <a href="https://api.whatsapp.com/send?phone=5521980798925" className="logo" target="BLANK">
+                    <a href="https://api.whatsapp.com/send?phone=5521980798925" className="logo" target="_blank" rel="noopener norefereer">
                         <img src={whatsappIcon} alt="whatsapp icon" />
                     </a>
                 </div>
@@ -108,6 +109,7 @@ export const Main = () => {
 
             {/* <Project description="descrição foda" desktopImg={backgroundVideo} liveLink="linkzao" mobileImg={backgroundVideo} name="titulo" repoLink="link" technologies={[]} /> */}
             <Projects />
+            <SocialMedia />
             {/* <MainProject /> */}
             {/* <Skills /> */}
 

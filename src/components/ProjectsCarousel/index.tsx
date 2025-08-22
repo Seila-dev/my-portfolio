@@ -138,13 +138,13 @@ const ArrowButton = styled.button<{ position: "left" | "right" }>`
   padding: 8px;
   position: absolute;
   top: 50%;
-  ${({ position }) => (position === "left" ? "left: 0;" : "right: 0;")}
+  ${({ position }) => (position === "left" ? "left: -2%;" : "right: -2%;")}
   transform: translateY(-50%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 0;
   cursor: pointer;
   transition: background 0.2s;
 

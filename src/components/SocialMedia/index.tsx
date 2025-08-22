@@ -1,38 +1,69 @@
-import { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import { Zap } from 'lucide-react';
-import image from '../../assets/plaiades-2.webp'
-import video from '../../assets/subaru-stairs.mp4';
+import image from '../../assets/subaru_gluttonyif_edited-1.png'
+// import video from '../../assets/subaru-stairs.mp4';
+import linkedin from '../../assets/linkedin.png';
+import github from '../../assets/github.png';
+import youtube from '../../assets/youtube.png';
+import tiktok from '../../assets/tiktok.png'
 
-const About = () => {
+export const SocialMedia = () => {
 
     return (
-        <AboutSection id="about">
-            <BackgroundVideo autoPlay loop muted playsInline>
+        <AboutSection id="socialmedia">
+            {/* <BackgroundVideo autoPlay loop muted playsInline>
   <source src={video} type="video/mp4" />
-</BackgroundVideo>
+</BackgroundVideo> */}
             <Header>
-                <Title>Carreira</Title>
-                <Subtitle>Desenvolvedor Full Stack & Tech Lead</Subtitle>
+                <Title>Redes sociais</Title>
+                <Subtitle>Todas as minhas formas de comunicação</Subtitle>
             </Header>
 
             <Content>
+                <MediaBox as="a" href="https://github.com/Seila-dev" target="_blank" rel="noopener noreferrer" variant='github'>
+                    <Icon src={github} alt="Github link"></Icon>
+                                        <TextWrapper>
+                        <Text>Erick Rodrigues</Text>
+                        <TextSecondary>github.com/Seila-dev/</TextSecondary>
+                    </TextWrapper>
+                </MediaBox>
+
+                <MediaBox as="a" href="https://linkedin.com/in/erickrodrigues-dev" target="_blank" rel="noopener noreferrer" variant='linkedin'>
+                    <Icon src={linkedin} alt="Linkedin link"></Icon>
+                                        <TextWrapper>
+                        <Text>Erick Rodrigues</Text>
+                        <TextSecondary>linkedin.com/in/erickrodrigues-dev/</TextSecondary>
+                    </TextWrapper>
+                </MediaBox>
+
+                <MediaBox as="a" href="https://www.youtube.com/@erickrodriguesdev" target="_blank" rel="noopener noreferrer" variant='youtube'>
+                    <Icon src={youtube} alt="Youtube link"></Icon>
+                                        <TextWrapper>
+                        <Text>Erick Dev</Text>
+                        <TextSecondary>youtube.com/@erickrodriguesdev</TextSecondary>
+                    </TextWrapper>
+                </MediaBox>
+
+                <MediaBox as="a" href="https://www.tiktok.com/@erick_dev" target="_blank" rel="noopener noreferrer" variant="tiktok">
+                    <Icon src={tiktok} alt="Tiktok link" />
+                    <TextWrapper>
+                        <Text>Erick dev</Text>
+                        <TextSecondary>tiktok.com/@erick_dev</TextSecondary>
+                    </TextWrapper>
+                </MediaBox>
             </Content>
         </AboutSection>
     );
 };
-
-export default About;
 
 const fadeIn = keyframes`
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 `;
 
-const slideIn = keyframes`
-    from { transform: translateX(-20px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-`;
+// const slideIn = keyframes`
+//     from { transform: translateX(-20px); opacity: 0; }
+//     to { transform: translateX(0); opacity: 1; }
+// `;
 
 const AboutSection = styled.section`
   position: relative;
@@ -50,14 +81,14 @@ const AboutSection = styled.section`
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     bottom: 0;
     width: 50%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center right;
 background-image: 
-  linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent 80%),
+  linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent 80%),
   url(${image});
     opacity: 0.3;
     pointer-events: none;
@@ -124,27 +155,89 @@ const Subtitle = styled.p`
 `;
 
 const Content = styled.div`
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // grid-template-rows: 1fr 1fr;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: flex-start;
-    gap: 80px;
-    max-width: 1400px;
+    gap: 8px;
+    transition: 0.2s ease-out;
     width: 100%;
 
-    @media (max-width: 1024px) {
-        flex-direction: column;
-        gap: 40px;
-    }
+    // @media (max-width: 1024px) {
+    //     flex-direction: column;
+    //     gap: 40px;
+    // }
 `;
 
-const BackgroundVideo = styled.video`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.20;
-  z-index: 0;
-  pointer-events: none;
+// const BackgroundVideo = styled.video`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   opacity: 0.20;
+//   z-index: 0;
+//   pointer-events: none;
+// `;
+
+const MediaBox = styled.div<{ variant: string }>`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: ${({ variant }) => {
+        switch (variant) {
+            case 'youtube':
+                return 'linear-gradient(to right, #ff0000 10%, #1818185a)';
+            case 'tiktok':
+                return 'linear-gradient(to right, #717171ff 10%, #18181881)';
+            case 'linkedin':
+                return 'linear-gradient(to right, #0e76a8 10%, #18181870)';
+            case 'github':
+                return 'linear-gradient(to right, #333 10%, #1818186e)';
+            default:
+                return 'linear-gradient(to right, #1a1a1a 10%, #18181871)';
+        }
+    }};
+  border-radius: 8px;
+  padding: 14px 28px 14px 20px;
+  width: fit-content;
+//   min-width: 50px;
+//   max-width: 400px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-4px);
+  }
+`;
+
+
+const Icon = styled.img`
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+`;
+
+const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+`;
+
+const Text = styled.span`
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+`;
+
+const TextSecondary = styled.span`
+  font-size: 13px;
+  color: #bbb;
 `;

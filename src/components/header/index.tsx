@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Home, User, Folder, SparklesIcon } from "lucide-react";
+import { Home, User, Folder, Users } from "lucide-react";
 import styled, { css } from "styled-components";
 
 
@@ -11,7 +11,7 @@ export default function Header(){
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ["home", "about", "projects", "skills"];
+            const sections = ["home", "about", "projects", "socialmedia"];
             const scrollPosition = window.scrollY + 100;
 
             for (let id of sections) {
@@ -61,10 +61,10 @@ export default function Header(){
                     <TooltipText>Projetos</TooltipText>
                 </TooltipWrapper>
                 <TooltipWrapper>
-                    <NavItem href="#skills" $active={activeSection === "skills"}>
-                        <SparklesIcon size={18} />
+                    <NavItem href="#socialmedia" $active={activeSection === "socialmedia"}>
+                        <Users size={18} />
                     </NavItem>
-                    <TooltipText>Habilidades</TooltipText>
+                    <TooltipText>Social media</TooltipText>
                 </TooltipWrapper>
             </Nav>
         </Container>
