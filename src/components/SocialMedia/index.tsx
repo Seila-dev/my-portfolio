@@ -1,290 +1,307 @@
-import styled, { keyframes } from "styled-components";
-import image from '../../assets/subaru-reinhard.jpg'
-import character from '../../assets/me.jpg'
-// import video from '../../assets/subaru-stairs.mp4';
-import linkedin from '../../assets/linkedin.png';
-import github from '../../assets/github.png';
-import youtube from '../../assets/youtube.png';
-import tiktok from '../../assets/tiktok.png'
+import styled from "styled-components"
+import githubIcon from '../../assets/github.png'
+import linkedinIcon from '../../assets/linkedin.png'
+import tiktokIcon from '../../assets/tiktok.png'
+import youtubeIcon from '../../assets/youtube.png'
 
-export const SocialMedia = () => {
-
+export const SocialFooter = () => {
     return (
-        <Section id="socialmedia">
-            {/* <BackgroundVideo autoPlay loop muted playsInline>
-  <source src={video} type="video/mp4" />
-</BackgroundVideo> */}
-            <Header>
-                <Title>Redes sociais</Title>
-                <Subtitle>Todas as minhas formas de comunicação</Subtitle>
-            </Header>
-                        <Footer>
-              <WidthSettings>
-                <Icon src={character} alt="Tiktok link" className="character" />
-                <TextWrapper>
-                  <Text>Erick Rodrigues</Text>
-                  <TextSecondary>Fullstack Developer | Tech Lead</TextSecondary>
-                </TextWrapper>
-                            
-              </WidthSettings>
-              </Footer>
+        <>
+            <SectionTransition />
+            <FooterContainer id="socialmedia">
+                <FooterContent>
+                    <SocialSection>
+                        <h2>Social Media</h2>
+                        <p>Me encontre nas redes sociais e acompanhe meu trabalho</p>
+                        
+                        <SocialGrid>
+                            <SocialLink 
+                                href="https://github.com/Seila-dev/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="github"
+                            >
+                                <img src={githubIcon} alt="GitHub" />
+                                <div className="social-info">
+                                    <span className="social-name">GitHub</span>
+                                    <span className="social-desc">Meus projetos e código</span>
+                                </div>
+                            </SocialLink>
 
-            <Content>
-                <MediaBox as="a" href="https://github.com/Seila-dev" target="_blank" rel="noopener noreferrer" variant='github'>
-                    <Icon src={github} alt="Github link"></Icon>
-                                        <TextWrapper>
-                        <Text>Erick Rodrigues</Text>
-                        <TextSecondary>github.com/Seila-dev/</TextSecondary>
-                    </TextWrapper>
-                </MediaBox>
+                            <SocialLink 
+                                href="https://www.linkedin.com/in/erickrodrigues-dev/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="linkedin"
+                            >
+                                <img src={linkedinIcon} alt="LinkedIn" />
+                                <div className="social-info">
+                                    <span className="social-name">LinkedIn</span>
+                                    <span className="social-desc">Carreira e networking</span>
+                                </div>
+                            </SocialLink>
 
-                <MediaBox as="a" href="https://linkedin.com/in/erickrodrigues-dev" target="_blank" rel="noopener noreferrer" variant='linkedin'>
-                    <Icon src={linkedin} alt="Linkedin link"></Icon>
-                                        <TextWrapper>
-                        <Text>Erick Rodrigues</Text>
-                        <TextSecondary>linkedin.com/in/erickrodrigues-dev/</TextSecondary>
-                    </TextWrapper>
-                </MediaBox>
+                            <SocialLink 
+                                href="https://www.tiktok.com/@erick_dev" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="tiktok"
+                            >
+                                <img src={tiktokIcon} alt="TikTok" />
+                                <div className="social-info">
+                                    <span className="social-name">TikTok</span>
+                                    <span className="social-desc">Conteúdo sobre tech</span>
+                                </div>
+                            </SocialLink>
 
-                <MediaBox as="a" href="https://www.youtube.com/@erickrodriguesdev" target="_blank" rel="noopener noreferrer" variant='youtube'>
-                    <Icon src={youtube} alt="Youtube link"></Icon>
-                                        <TextWrapper>
-                        <Text>Erick Dev</Text>
-                        <TextSecondary>youtube.com/@erickrodriguesdev</TextSecondary>
-                    </TextWrapper>
-                </MediaBox>
+                            <SocialLink 
+                                href="https://www.youtube.com/@erickrodriguesdev" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="youtube"
+                            >
+                                <img src={youtubeIcon} alt="YouTube" />
+                                <div className="social-info">
+                                    <span className="social-name">YouTube</span>
+                                    <span className="social-desc">Tutoriais e projetos</span>
+                                </div>
+                            </SocialLink>
+                        </SocialGrid>
+                    </SocialSection>
 
-                <MediaBox as="a" href="https://www.tiktok.com/@erick_dev" target="_blank" rel="noopener noreferrer" variant="tiktok">
-                    <Icon src={tiktok} alt="Tiktok link" />
-                    <TextWrapper>
-                        <Text>Erick dev</Text>
-                        <TextSecondary>tiktok.com/@erick_dev</TextSecondary>
-                    </TextWrapper>
-                </MediaBox>
-            </Content>
-
-        </Section>
-    );
-};
-
-const fadeIn = keyframes`
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-`;
-
-// const slideIn = keyframes`
-//     from { transform: translateX(-20px); opacity: 0; }
-//     to { transform: translateX(0); opacity: 1; }
-// `;
-
-const Section = styled.section`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 60px 150px;
-  padding-top: 150px;
-  min-height: 100vh;
-  color: white;
-  gap: 20px;
-  z-index: -1;
-  overflow: hidden;
-  background: linear-gradient(to left, #4c3b3b45, #000, transparent);
-
-  /* Imagem da biblioteca no canto direito */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 70%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center right;
-background-image: 
-  linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent 80%),
-  url(${image});
-    opacity: 0.2;
-    pointer-events: none;
-    z-index: -1;
-  }
-
-
-
-/* Sobreposição lateral + topo + bottom */
-&::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  /* Combina 3 camadas: top, bottom e lateral (fade suave da imagem) */
-  background:
-    linear-gradient(to bottom, #000 1px, transparent 50px),   /* Top gradient */
-    // linear-gradient(to top, #000 1px, transparent 50px),     /* Bottom gradient */
-    linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent 0%); /* Fade da imagem para o fundo */
-  
-  z-index: 1;
-  pointer-events: none;
+                    <FooterBottom>
+                        <p>&copy; 2025 Erick Rodrigues. Desenvolvedor Full Stack & Tech Lead</p>
+                        <span>Feito com ❤️ e muito código</span>
+                    </FooterBottom>
+                </FooterContent>
+            </FooterContainer>
+        </>
+    )
 }
 
-  > * {
+const SectionTransition = styled.div`
     position: relative;
-    z-index: 1;
-  }
-
-  @media (max-width: 1024px) {
-    padding: 40px 20px;
-
-    &::before,
-    &::after {
-      width: 100%;
-      background-position: center;
-        // background: linear-gradient(to right, #1a002b, #000, transparent);
-        z-index: 0;
-    }
-  }
-`;
-
-const Header = styled.div`
-    margin-bottom: 60px;
-    animation: ${fadeIn} 0.8s ease-out;
-`;
-
-const Title = styled.h2`
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    background: var(--primary-light);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-`;
-
-const Subtitle = styled.p`
-    font-size: 18px;
-    color: #9ca3af;
-    margin: 0;
-`;
-
-const Content = styled.div`
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-    // grid-template-rows: 1fr 1fr;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 8px;
-    transition: 0.2s ease-out;
     width: 100%;
+    height: 0px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+    z-index: 1;
+    margin-top: -1px;
+`;
+
+const FooterContainer = styled.footer`
+    background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+    color: white;
+    padding: 80px 0 40px;
+    position: relative;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    }
+`;
+
+const FooterContent = styled.div`
+    // max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 150px;
 
     @media (max-width: 1024px) {
-        margin-bottom: 60px;
+        padding: 0 40px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 0 20px;
     }
 `;
 
-// const BackgroundVideo = styled.video`
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-//   opacity: 0.20;
-//   z-index: 0;
-//   pointer-events: none;
-// `;
+const SocialSection = styled.div`
+    // text-align: center;
+    margin-bottom: 60px;
 
-const MediaBox = styled.div<{ variant: string }>`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: ${({ variant }) => {
-        switch (variant) {
-            case 'youtube':
-                return 'linear-gradient(to right, #ff0000 10%, #1818185a)';
-            case 'tiktok':
-                return 'linear-gradient(to right, #717171ff 10%, #18181881)';
-            case 'linkedin':
-                return 'linear-gradient(to right, #0e76a8 10%, #18181870)';
-            case 'github':
-                return 'linear-gradient(to right, #333 10%, #1818186e)';
-            default:
-                return 'linear-gradient(to right, #1a1a1a 10%, #18181871)';
+    h2 {
+        font-size: 48px;
+        margin-bottom: 15px;
+        background: linear-gradient(45deg, var(--primary), var(--primary-light));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: fade-up 0.5s 0.2s backwards;
+    }
+
+    p {
+        font-size: 20px;
+        color: #c2c2c2;
+        margin-bottom: 50px;
+        animation: fade-up 0.5s 0.4s backwards;
+    }
+
+    @media (max-width: 768px) {
+        h2 {
+            font-size: 32px;
         }
-    }};
-  border-radius: 8px;
-  padding: 14px 28px 14px 20px;
-  width: fit-content;
-//   min-width: 50px;
-//   max-width: 400px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: white;
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-4px);
-  }
+        
+        p {
+            font-size: 18px;
+        }
+    }
 `;
 
+const SocialGrid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    // max-width: 800px;
+    // margin: 0 auto;
 
-const Icon = styled.img`
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 `;
 
-const WidthSettings = styled.div`
-    max-width: 1200px;
+const SocialLink = styled.a`
     display: flex;
     align-items: center;
-    width: 100%;
-    gap: 14px;
-
-    
-  img{
-    border-radius: 50%;
-    object-fit: cover;
-    width: 60px;
-    height: 60px;
-  }
-
-  span{
-    font-size: 1.3rem;
-  }
-`
-
-const TextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4px;
-`;
-
-const Text = styled.span`
-  font-size: 16px;
-  font-weight: 600;
-  color: white;
-`;
-
-const TextSecondary = styled.span`
-  font-size: 13px;
-  color: #bbb;
-`;
-
-const Footer = styled.footer`
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
     position: relative;
-    bottom: 0;
-    left: 0;
-    gap: 12px;
-    display: flex;
-    padding: 30px 14px;
-    justify-content: center;
-      background: #4e4e4e4d;
-    align-items: center;
-    width: 100%;
-`
+    overflow: hidden;
+    animation: fade-up 0.5s 0.6s backwards;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transition: left 0.5s ease;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary);
+        box-shadow: 0 20px 40px rgba(134, 1, 243, 0.3);
+        
+        &::before {
+            left: 100%;
+        }
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+    }
+
+    .social-info {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .social-name {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .social-desc {
+        font-size: 14px;
+        color: #c2c2c2;
+    }
+
+    &.github:hover {
+        border-color: #333;
+        box-shadow: 0 20px 40px rgba(51, 51, 51, 0.3);
+    }
+
+    &.linkedin:hover {
+        border-color: #0077b5;
+        box-shadow: 0 20px 40px rgba(0, 119, 181, 0.3);
+    }
+
+    &.tiktok:hover {
+        border-color: #ff0050;
+        box-shadow: 0 20px 40px rgba(255, 0, 80, 0.3);
+    }
+
+    &.youtube:hover {
+        border-color: #ff0000;
+        box-shadow: 0 20px 40px rgba(255, 0, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        padding: 20px;
+        
+        img {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+        }
+        
+        .social-name {
+            font-size: 18px;
+        }
+    }
+`;
+
+const FooterBottom = styled.div`
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fade-up 0.5s 0.8s backwards;
+
+    p {
+        font-size: 16px;
+        color: #c2c2c2;
+        margin-bottom: 10px;
+    }
+
+    span {
+        font-size: 14px;
+        color: var(--primary-light);
+    }
+
+    @media (max-width: 768px) {
+        p {
+            font-size: 14px;
+        }
+        
+        span {
+            font-size: 12px;
+        }
+    }
+`;
+
+// Adicione estas animações ao seu CSS global se ainda não existir
+/*
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+*/
