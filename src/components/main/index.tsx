@@ -9,7 +9,7 @@ import cvDownload from '../../assets/ErickOliveiraRodrigues_DevWebFullStack_PDF.
 import { TechSlider } from "../TechSlider"
 import About from "../About"
 import { SocialFooter } from "../SocialMedia"
-// import MainProject from "../MainProject"
+import { Background } from "../BackgroundEclipse"
 
 interface MouseMovements {
     clientX: number;
@@ -34,7 +34,6 @@ export const Main = () => {
     useEffect(() => {
         const handleMouseMove = (e: MouseMovements) => {
             const { clientX, clientY } = e;
-            // Move o fundo de forma interativa
             const offsetX = (clientX - window.innerWidth / 2) * 0.05;
             const offsetY = (clientY - window.innerHeight / 2) * 0.05;
             document.querySelector('.character img')?.setAttribute(
@@ -49,6 +48,7 @@ export const Main = () => {
 
     return (
         <>
+        <Background />
             <Introduction id="home">
                 <div className="info">
                     <p>Meu nome é</p>
@@ -80,40 +80,9 @@ export const Main = () => {
             </Introduction>
             <SectionTransition />
             <TechSlider />
-            {/* <About id="about">
-                <h2>Sobre mim</h2>
-                <div className="content">
-                    <div className="text">
-                        <p className="description">
-                            Desenvolvedor Full Stack com foco em criar <strong>soluções digitais escaláveis, performáticas e centradas na experiência do usuário.</strong>
-                        </p>
-                        <br />
-                        <p className="description">
-                            Tenho experiência prática em projetos reais e entregas sob demanda, atuando em todas as camadas da aplicação...
-                        </p>
-                        <br />
-                        <p className="description">
-                            Atualmente, aprofundo minha expertise por meio de mentorias individuais...
-                        </p>
-                        <br />
-                        <p className="description">
-                            Minhas especialidades: <strong>Next.js, React.js, TypeScript, Javascript, Nest.js...</strong>
-                        </p>
-                    </div>
-                    <div className="character">
-                        <img src={characterPng} alt="Personagem Subaru" />
-                    </div>
-                </div>
-            </About> */}
             <About />
-
-            {/* <Project description="descrição foda" desktopImg={backgroundVideo} liveLink="linkzao" mobileImg={backgroundVideo} name="titulo" repoLink="link" technologies={[]} /> */}
             <Projects />
             <SocialFooter />
-            {/* <MainProject /> */}
-            {/* <Skills /> */}
-
-
             <BackgroundPrompt>
                 {/* <video src={backgroundVideo} autoPlay muted loop></video> */}
                 {/* <img src={backgroundVideo} alt="" /> */}
@@ -180,8 +149,8 @@ const Introduction = styled.main`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.410); /* Ajuste de opacidade do fundo */
-    z-index: -1; /* Camada de fundo */
+    background-color: rgba(0, 0, 0, 0.410);
+    z-index: -1; 
   }
   &::before {
     content: "";
@@ -191,7 +160,7 @@ const Introduction = styled.main`
     width: 100%;
     height: 150px;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);
-    z-index: 2; /* Camada de transição */
+    z-index: 2;
     pointer-events: none;
   }
     .info p{
@@ -280,9 +249,9 @@ const Introduction = styled.main`
     }
 
     @media(max-width: 768px){
-            background-position: 60%;
+        background-position: 60%;
         padding: 40px 10px 10px 10px;
-        // justify-content: center;
+
         .info h1{
             font-size: 40px;
         }
@@ -301,10 +270,9 @@ const Introduction = styled.main`
     }
     @media(max-width: 380px){
     background-image: url(${backgroundVideo});
-      &::after {
-        background-color: rgba(0, 0, 0, 0.2); 
+        &::after {
+            background-color: rgba(0, 0, 0, 0.2); 
         }
-
 
         .info h1{
             font-size: 32px;
@@ -318,70 +286,6 @@ const Introduction = styled.main`
     }
 `
 
-// const About = styled.section`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   padding: 60px 30px;
-//   min-height: 100vh;
-//   background-color: black;
-//   color: white;
-
-//   h2 {
-//     text-align: center;
-//     margin-bottom: 50px;
-//     font-size: 40px;
-//     font-weight: 400;
-//   }
-
-//   .content {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     width: 100%;
-//     max-width: 1200px;
-//     gap: 50px;
-//   }
-
-//   .text {
-//     flex: 1;
-//   }
-
-//   .text p {
-//     font-size: 24px;
-//     line-height: 1.6;
-//     margin-bottom: 20px;
-//   }
-
-//   .character {
-//     flex: 1;
-//     display: flex;
-//     justify-content: center;
-//     align-items: flex-end;
-//   }
-
-//   .character img {
-//     max-height: 500px;
-//     width: auto;
-//     object-fit: contain;
-//   }
-
-//   @media (max-width: 1024px) {
-//     .content {
-//       flex-direction: column;
-//       align-items: center;
-//     }
-
-//     .character img {
-//       max-height: 350px;
-//       margin-top: 30px;
-//     }
-
-//     .text p {
-//       font-size: 20px;
-//     }
-//   }
-// `;
 
 const BackgroundPrompt = styled.div`
     position: fixed;
@@ -392,7 +296,6 @@ const BackgroundPrompt = styled.div`
     height: 100%;
     background-color: black;
     img{
-        // height: 100%;
         min-width: 100%;
         min-height: 100%;
         width: auto;
@@ -407,5 +310,5 @@ const SectionTransition = styled.div`
   height: 0px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
   z-index: 1;
-  margin-top: -1px; /* sobrepõe parte do conteúdo anterior */
+  margin-top: -1px; 
 `;

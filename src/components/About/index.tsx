@@ -12,7 +12,7 @@ const About = () => {
     const experiences = [
         {
             title: "Tech Lead - Kosting Services",
-            description: "Atualmente, sou Tech Lead em uma startup SaaS com uma equipe de 7 desenvolvedores e 2 designers. Estou liderando a construção de produtos digitais reais, focando em metodologias ágeis, colaboração constante e sempre entregando o máximo de qualidade possível.",
+            description: "Atualmente, sou Tech Lead em uma startup SaaS com uma equipe de 7 desenvolvedores e 2 designers (atualmente contratando + designers). Estou liderando a construção de produtos digitais reais, focando em metodologias ágeis, colaboração constante e sempre entregando o máximo de qualidade possível.",
             date: "06/2025 - Até o momento",
             highlight: "Leadership",
             tags: ["Team Lead", "SaaS", "Metodologias Ágeis"]
@@ -33,13 +33,6 @@ const About = () => {
         highlight: "Overview",
         tags: ["JavaScript", "TypeScript", "React.js", "Next.js", "Node.js"]
     };
-
-    // const techStack = [
-    //     "JavaScript", "TypeScript", "React.js", "Next.js", "Node.js", 
-    //     "Express", "PostgreSQL", "JWT", "OAuth 2.0", "Git"
-    // ];
-
-    // const studying = ["Nest.js", "Fastify", "Vitest", "C#", ".NET"];
 
     return (
         <AboutSection id="about">
@@ -86,9 +79,6 @@ const About = () => {
                             <BoxHeader>
                                 <BoxTitle>{experience.title}</BoxTitle>
                             </BoxHeader>
-                            {/* <BoxDescription>
-                                {experience.description.substring(0, 50)}...
-                            </BoxDescription> */}
                             <BoxDate>{experience.date.split(' - ')[0]}</BoxDate>
                         </ExperienceBox>
                     ))}
@@ -104,7 +94,7 @@ const About = () => {
                         <BoxDescription>
                             Resumo da minha carreira como desenvolvedor, destacando minhas habilidades e experiências mais relevantes.
                         </BoxDescription>
-                        <BoxDate>4+ Anos</BoxDate>
+                        <BoxDate>+4 Anos</BoxDate>
                     </ExperienceBox>
                 </ExperienceContainer>
             </Content>
@@ -135,7 +125,6 @@ const AboutSection = styled.section`
   overflow: hidden;
   background: linear-gradient(to right, #1a002b, #000, transparent);
 
-  /* Imagem da biblioteca no canto direito */
   &::before {
     content: '';
     position: absolute;
@@ -155,8 +144,6 @@ background-image:
   }
 
 
-
-/* Sobreposição lateral + topo + bottom */
 &::after {
   content: '';
   position: absolute;
@@ -165,11 +152,10 @@ background-image:
   bottom: 0;
   left: 0;
 
-  /* Combina 3 camadas: top, bottom e lateral (fade suave da imagem) */
   background:
-    linear-gradient(to bottom, #000 1px, transparent 50px),   /* Top gradient */
-    linear-gradient(to top, #000 1px, transparent 50px),     /* Bottom gradient */
-    linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent 0%); /* Fade da imagem para o fundo */
+    linear-gradient(to bottom, #000 1px, transparent 50px),  
+    linear-gradient(to top, #000 1px, transparent 50px),  
+    linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent 0%);
   
   z-index: 3;
   pointer-events: none;
@@ -285,7 +271,6 @@ const ExperienceContainer = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
-    // gap: 20px;
     animation: ${slideIn} 0.8s ease-out 0.4s both;
 `;
 
