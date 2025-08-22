@@ -47,7 +47,7 @@ const Slide = styled.div`
   cursor: pointer;
 
   &:hover {
-    transform: scale(1.03);
+    transform: scale(0.95);
   }
 `;
 
@@ -67,33 +67,60 @@ const StyledImg = styled.img`
   }
 `;
 
+// const Arrow = styled.button`
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   background: var(--primary-light);
+//   color: white;
+//   border: none;
+//   border-radius: 50%;
+//   font-size: 1.6rem;
+//   opacity: 0.8;
+//   width: 36px;
+//   height: 36px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   transition: 0.2s ease-out;
+//   cursor: pointer;
+//   z-index: 10;
+
+//   &:hover {
+//     background: rgba(30, 30, 30, 0.3);
+//   }
+
+//   @media (min-width: 1024px) {
+//     display: none;
+//   }
+// `;
+
 const Arrow = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--primary-light);
+  background: #1a1a1a;
+  border: 1px solid #333;
   color: white;
-  border: none;
+  padding: 8px;
   border-radius: 50%;
-  font-size: 1.6rem;
-  opacity: 0.8;
+  display: flex;
   width: 36px;
   height: 36px;
-  display: flex;
   align-items: center;
   justify-content: center;
   transition: 0.2s ease-out;
   cursor: pointer;
-  z-index: 10;
+  transition: background 0.2s;
 
   &:hover {
-    background: rgba(30, 30, 30, 0.3);
+    background: #333;
   }
-
+  
   @media (min-width: 1024px) {
     display: none;
   }
-`;
+`
 
 const ArrowLeft = styled(Arrow)`
   left: -10px;

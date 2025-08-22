@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import { Code2, SquareDashedMousePointer } from "lucide-react";
+import Star from '../../assets/stars.png'
+import UnfilledStar from '../../assets/unfilledstars.png'
 import ProjectImage1 from "../../assets/watchlist.png";
 import ProjectImage2 from "../../assets/watchlist-4.webp";
 import ProjectImage3 from "../../assets/watchlist-3.png";
+import ComingSoon from "../../assets/comingsoon.png";
 import cover from "../../assets/watchlist-4.webp";
 import MediaGallery from "../MediaGallery";
 
@@ -16,7 +19,8 @@ const content = {
   finishDate: "Até o momento",
   repoLink: "https://github.com/Seila-dev/watchlist",
   demoLink: "https://your-watchlist.vercel.app/",
-  rating: 4.5,
+  rating: 5,
+
   categories: [
     { categoryId: "1", category: { name: "Ficção" } },
     { categoryId: "2", category: { name: "Aventura" } },
@@ -62,8 +66,8 @@ const BackgroundBlur = styled.div<{ bg?: string }>`
   background-image: ${({ bg }) => (bg ? `url(${bg})` : "none")};
   background-size: cover;
   background-position: top;
-  opacity: 0.24;
-  filter: blur(0px);
+  opacity: 0.395;
+  filter: blur(8px);
   transform: scale(1.05);
 `;
 
@@ -146,11 +150,11 @@ const Description = styled.p`
   max-width: 42rem;
 `;
 
-const Dates = styled.div`
-  font-size: 0.875rem;
-  color: #9ca3af; 
-  margin-bottom: 1.5rem;
-`;
+// const Dates = styled.div`
+//   font-size: 0.875rem;
+//   color: #9ca3af; 
+//   margin-bottom: 1.5rem;
+// `;
 
 const Footer = styled.div`
   font-size: 0.75rem;
@@ -197,34 +201,24 @@ const ActionMethods = styled.div`
         }
     }
 
-    @media(max-width: 720px){
+    @media(max-width: 450px){
       flex-direction: column;
     }
 `
 
-//   display: flex;
-//     gap: 1rem;
-//     height: 100%;
-//     width: 100%;
-//     align-items: flex-start;
-//     img {
-//         max-width: 250px;
-//         height: 180px;
-//         width: 100%;
-//         border-radius: 10px;
-//         cursor: pointer;
-//         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-//         }
-//     @media (min-width: 1024px) {
-//         flex-direction: column;
-//         align-items: flex-end;
-//         // img {
-//         //     width: 32%;
-//         // }
-//     }
-// `;
+const Stars = styled.div`
+  font-size: 1rem;
+  color: #ffcc00;
+  margin-bottom: 8px;
+`;
 
-// ---------------- Component ----------------
+const StarImg = styled.img`
+  width: 25px;
+  height: 25px;
+  margin-right: 4px;
+`;
+
+
 export default function MainProject() {
   return (
     <Section>
@@ -242,9 +236,19 @@ export default function MainProject() {
 
           {content.description && <Description>{content.description}</Description>}
 
-          <Dates>
+          {/* <Dates>
             {content.startDate} - {content.finishDate}
-          </Dates>
+          </Dates> */}
+
+          <Stars>
+          {Array.from({ length: 5 }, (_, i) => (
+            <StarImg
+              key={i}
+              src={i < content.rating ? Star : UnfilledStar}
+              alt={i < content.rating ? "Estrela preenchida" : "Estrela vazia"}
+            />
+          ))}
+        </Stars>
 
           <ActionMethods>
             <a href={content.demoLink} className="links" target="BLANK" rel="noopener noreferrer">
@@ -264,7 +268,7 @@ export default function MainProject() {
         </Content>
         <Content>
           <MediaGallery
-            images={[ProjectImage1, ProjectImage2, ProjectImage3]}
+            images={[ProjectImage1, ProjectImage2, ProjectImage3, ComingSoon]}
           />
         </Content>
       </Container>

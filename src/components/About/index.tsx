@@ -129,6 +129,7 @@ const AboutSection = styled.section`
   display: flex;
   flex-direction: column;
   padding: 60px 150px;
+  padding-top: 150px;
   min-height: 100vh;
   color: white;
   overflow: hidden;
