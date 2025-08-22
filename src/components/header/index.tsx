@@ -154,4 +154,8 @@ export const NavItem = styled.a<NavItemProps>`
   &:hover {
     background-color: #3f3f46;
   }
+
+  @media(max-width: 768px){
+    padding: 0.3rem;
+  }
 `;

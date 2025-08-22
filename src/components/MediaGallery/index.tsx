@@ -71,16 +71,20 @@ const Arrow = styled.button`
   background: var(--primary-light);
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 50%;
   font-size: 1.6rem;
+  opacity: 0.8;
   width: 36px;
   height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: 0.2s ease-out;
   cursor: pointer;
   z-index: 10;
 
   &:hover {
-    background: rgba(30, 30, 30, 0.9);
+    background: rgba(30, 30, 30, 0.3);
   }
 
   @media (min-width: 1024px) {
@@ -132,7 +136,7 @@ const MediaGallery = ({ images }: MediaTypes) => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
-        loop: true,
+        loop: false,
         breakpoints: {
             "(max-width: 1024px)": {
                 slides: {
