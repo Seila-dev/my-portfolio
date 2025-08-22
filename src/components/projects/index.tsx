@@ -1,202 +1,79 @@
-// import styled from "styled-components"
-// import { pinnedProjectsData } from "../../mocks/pinnedProjectsData"
-// import { projectsData } from "../../mocks/projectsData"
-// import { Project } from "../project"
-
-// export const Projects = () => {
-    
-
-//     return (
-//         <ProjectsSection id="projects">
-//             <h2>Projetos</h2>
-//             <Container>
-//                 <Divisor><div className="line b1"></div><span className="span-pin">Projetos em destaque</span> <div className="line b2"></div></Divisor>
-//                 <div className="pinned-projects">
-//                     {pinnedProjectsData.map((project, index) => (
-//                         <Project key={index} {...project} />
-//                     ))}
-//                 </div>
-//                 <div className="progress-projects">
-//                     <Divisor><div className="line b1"></div><span className="span-pin">Outros projetos</span> <div className="line b2"></div></Divisor>
-//                     <div className="projects">
-//                         {projectsData.map((project, index) => (
-//                             <Project key={index} {...project} />
-//                         ))}
-//                     </div>
-//                 </div>
-//             </Container>
-//         </ProjectsSection>
-//     )
-// }
-
-// const ProjectsSection = styled.section`
-//     display: flex;
-//     justify-content: center;
-//     flex-direction: column;
-//     margin-bottom: 150px;
-//     animation: fade-up 0.5s 0.4s backwards;
-    
-//     h2{
-//         text-align: center;
-//         margin-bottom: 50px;
-//         font-size: 40px;
-//         font-weight: 400;
-//     }
-    
-// `
-
-// const Divisor = styled.div`
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-    
-//     .span-pin{
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         height: 100%;
-//         margin: 30px;
-//         width: 200px;
-//         text-align: center;
-//         font-style: italic;
-//     }
-//     .line{
-//         background: #ccc;
-//         width: 200px;
-//         height: 1px;
-//     }
-// `
-
-// const Container = styled.div`
-//     padding: 10px;
-//     .pinned-projects, .projects{
-//         display: grid;
-//         grid-template-columns: 1fr 1fr 1fr;
-//     }
-//     .pinned-projects{
-//         margin-bottom: 50px;
-//     }
-//     .project{
-//         position: relative;
-//         text-align: center;
-//         margin-bottom: 20px;
-//         .descriptionText{
-//             padding: 5px 8%;
-//         }
-//         .descriptionText p{
-//         }
-//         .links{
-//             margin-top: 10px;
-//             display: flex;
-//             flex-direction: column;
-//             gap: 5px;
-//             width: 100%;
-//             align-items: center;
-//         }
-//         .links a{
-//             width: fit-content;
-//         }
-//         .links a:hover{
-//             border-bottom: 1px solid white;
-//         }
-//         .links .description{
-//             cursor: pointer;
-//         }
-//         img{
-//             width: 80%;
-//             margin-top: 10px;
-//             user-select: none;
-//         }
-//         .mobile-img{
-//             position: absolute;
-//             right: 10px;
-//             top: 125px;
-//             width: 30%;
-//             z-index: 5;
-//         }
-//         .technologies{
-//             display: flex;
-//             justify-content: center;
-//             gap: 10px;
-//         }
-//         .tech-box{
-//             padding: 0 20px;
-//             border-radius: 5px;
-//         }
-//         .technologies .logo{
-//             width: 40px;
-//             border: 1px solid black;
-//             border-radius: 5px;
-//             padding: 3px;
-//             margin: 10px 5px;
-//             background: white;
-//             opacity: 0.8;
-//         }
-//         .technologies .logo:hover{
-//             opacity: 1;
-//         }
-//     }
-
-//     @media(max-width: 768px){
-        
-//         .pinned-projects, .projects{
-//             grid-template-columns: 1fr;
-//         }
-//         .project{
-//             margin-bottom: 70px;
-//         }
-//     }
-
-// `
-
-
-
-
 import styled from "styled-components";
-// import { Github, ExternalLink } from "lucide-react";
-// import ProjectImage from "../../assets/watchlist.png";
+import { Link2, Settings } from "lucide-react";
+import ProjectImage from "../../assets/watchlist.png";
+import ProjectImage2 from "../../assets/port-booksregister-pj.png";
+import ProjectImage3 from "../../assets/port-joysystem-pj.png";
 import MainProject from "../MainProject";
 
 const Projects = () => {
-  return (
-    <AboutSection id="projects">
-      {/* <Header>
-        <Title>Projeto principal</Title>
-        <Subtitle>Desenvolvedor Full Stack & Tech Lead</Subtitle>
-      </Header> */}
+  const projects = [
+    {
+      id: 1,
+      title: "Watchlist",
+      description: "Plataforma para cadastro e gestão de livros com autenticação, relatórios e integração em tempo real.",
+      thumbnail: ProjectImage3,
+      github: "https://github.com/seu-repo",
+      demo: "https://demo.com"
+    },
+    {
+      id: 2,
+      title: "E-commerce Dashboard",
+      description: "Dashboard completo para gestão de produtos, vendas e relatórios em tempo real.",
+      thumbnail: ProjectImage2,
+      github: "https://github.com/seu-repo-2",
+      demo: "https://demo2.com"
+    },
+    {
+      id: 3,
+      title: "Task Manager",
+      description: "Aplicativo de gerenciamento de tarefas com drag & drop e colaboração em equipe.",
+      thumbnail: ProjectImage,
+      github: "https://github.com/seu-repo-3",
+      demo: "https://demo3.com"
+    }
+  ];
 
+  return (
+    <Section id="projects">
       <Content>
         <MainProject />
-        {/* <ProjectCard>
-          <Thumbnail
-            src={ProjectImage} // substitua pela sua imagem
-            alt="Preview do projeto"
-          />
-          <Info>
-            <h3>Watchlist</h3>
-            <p>
-              Plataforma para cadastro e gestão de livros com autenticação, relatórios e integração em tempo real.
-            </p>
-            <Links>
-              <a
-                href="https://github.com/seu-repo"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github size={18} /> Repositório
-              </a>
-              <a
-                href="https://demo.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ExternalLink size={18} /> Demonstração
-              </a>
-            </Links>
-          </Info>
-        </ProjectCard> */}
+        
+        <OtherProjectsSection>
+          <SectionTitle>Outros Projetos</SectionTitle>
+          <ProjectsGrid>
+            {projects.map((project) => (
+              <ProjectCard key={project.id}>
+                <ProjectThumbnail>
+                  <img src={project.thumbnail} alt={`Preview do ${project.title}`} />
+                </ProjectThumbnail>
+                <ProjectInfo>
+                  <ProjectTitle>{project.title}</ProjectTitle>
+                  <ProjectDescription>{project.description}</ProjectDescription>
+                  <ProjectLinks>
+                    <ProjectLink 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <Settings size={16} />
+                      Repositório
+                    </ProjectLink>
+                    <ProjectLink 
+                      href={project.demo} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <Link2 size={16} />
+                      Demo
+                    </ProjectLink>
+                  </ProjectLinks>
+                </ProjectInfo>
+              </ProjectCard>
+            ))}
+          </ProjectsGrid>
+        </OtherProjectsSection>
       </Content>
-    </AboutSection>
+    </Section>
   );
 };
 
@@ -204,108 +81,124 @@ export default Projects;
 
 // ---------------------- styled ----------------------
 
-// const fadeIn = keyframes`
-//   from { opacity: 0; transform: translateY(20px); }
-//   to { opacity: 1; transform: translateY(0); }
-// `;
-
-const AboutSection = styled.section`
+const Section = styled.section`
   display: flex;
   flex-direction: column;
-//   padding: 60px 150px;
-// padding: 60px 0;
   min-height: 100vh;
+  height: 100%;
   background: linear-gradient(to top, #000 0%, #214 50%, #000 100%);
   color: white;
   position: relative;
-
-//   @media (max-width: 1024px) {
-//     padding: 40px 20px;
-//   }
 `;
-
-// const Header = styled.div`
-//   margin-bottom: 60px;
-//   animation: ${fadeIn} 0.8s ease-out;
-// `;
-
-// const Title = styled.h2`
-//   font-size: 48px;
-//   font-weight: 700;
-//   margin-bottom: 10px;
-//   background: var(--primary-light);
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-//   background-clip: text;
-// `;
-
-// const Subtitle = styled.p`
-//   font-size: 18px;
-//   color: #9ca3af;
-//   margin: 0;
-// `;
 
 const Content = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   width: 100%;
+  margin: 0 auto;
 `;
 
-// const ProjectCard = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   max-width: 900px;
-//   width: 100%;
-//   border-radius: 12px;
-//   overflow: hidden;
-//   background: #111;
-//   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-//   animation: ${fadeIn} 0.8s ease-out;
-// `;
+const OtherProjectsSection = styled.div`
+  margin-top: 60px;
+  min-height: 100vh;
+  padding-bottom: 60px;
+`;
 
-// const Thumbnail = styled.img`
-//   width: 100%;
-//   height: 500px;
-//   object-fit: cover;
+const SectionTitle = styled.h2`
+  font-size: 32px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 600;
+`;
 
-//   @media (max-width: 1024px) {
-//     height: auto;
-//   }
-// `;
+const ProjectsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
 
-// const Info = styled.div`
-//   padding: 20px;
-//   display: flex;
-//   flex-direction: column;
-//   gap: 12px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+`;
 
-//   h3 {
-//     font-size: 24px;
-//     margin: 0;
-//   }
+const ProjectCard = styled.div`
+  background: #0f0f0f;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+`;
 
-//   p {
-//     color: #d1d5db;
-//     font-size: 16px;
-//     line-height: 1.4;
-//   }
-// `;
+const ProjectThumbnail = styled.div`
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: #1a1a1a;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  ${ProjectCard}:hover & img {
+    transform: scale(1.05);
+  }
+`;
 
-// const Links = styled.div`
-//   display: flex;
-//   gap: 16px;
+const ProjectInfo = styled.div`
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
 
-//   a {
-//     display: flex;
-//     align-items: center;
-//     gap: 6px;
-//     color: #60a5fa;
-//     text-decoration: none;
-//     font-weight: 500;
-//     transition: opacity 0.2s ease;
+const ProjectTitle = styled.h3`
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+  line-height: 1.3;
+`;
 
-//     &:hover {
-//       opacity: 0.8;
-//     }
-//   }
-// `;
+const ProjectDescription = styled.p`
+  font-size: 14px;
+  color: #aaa;
+  margin: 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+`;
+
+const ProjectLinks = styled.div`
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+`;
+
+const ProjectLink = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #60a5fa;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+`;

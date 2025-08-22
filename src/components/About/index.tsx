@@ -167,8 +167,8 @@ background-image:
   /* Combina 3 camadas: top, bottom e lateral (fade suave da imagem) */
   background:
     linear-gradient(to bottom, #000 1px, transparent 50px),   /* Top gradient */
-    linear-gradient(to top, #000 1px, transparent 100px),     /* Bottom gradient */
-    linear-gradient(to left, rgba(0, 0, 0, 0.6), transparent 20%); /* Fade da imagem para o fundo */
+    linear-gradient(to top, #000 1px, transparent 50px),     /* Bottom gradient */
+    linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent 0%); /* Fade da imagem para o fundo */
   
   z-index: 3;
   pointer-events: none;

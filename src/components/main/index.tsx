@@ -298,6 +298,7 @@ const Introduction = styled.main`
         }
     }
     @media(max-width: 380px){
+    background-image: url(${backgroundVideo});
       &::after {
         background-color: rgba(0, 0, 0, 0.2); 
         }

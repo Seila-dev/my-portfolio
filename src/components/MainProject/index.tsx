@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Code2, SquareDashedMousePointer } from "lucide-react";
 import ProjectImage1 from "../../assets/watchlist.png";
-import ProjectImage2 from "../../assets/watchlist-2.webp";
+import ProjectImage2 from "../../assets/watchlist-4.webp";
 import ProjectImage3 from "../../assets/watchlist-3.png";
 import cover from "../../assets/watchlist-4.webp";
 import MediaGallery from "../MediaGallery";
@@ -25,13 +25,13 @@ const content = {
   updatedAt: "2023-02-01",
 };
 
-// ---------------- Styled Components ----------------
 const Section = styled.section`
   position: relative;
   min-height: 100vh;
   padding: 60px 150px;
   width: 100%;
   color: white;
+  padding-top: 150px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
   background: linear-gradient(to bottom right, #0f0f0f, black);
@@ -47,16 +47,6 @@ const Section = styled.section`
     z-index: 2; /* Camada de transição */
     pointer-events: none;
   }
-//       &::after {
-//     content: "";
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background-color: rgba(0, 0, 0, 0.510); /* Ajuste de opacidade do fundo */
-//     z-index: -1; /* Camada de fundo */
-//   }
 
   @media (max-width: 1024px) {
     padding: 40px 20px;
@@ -74,7 +64,7 @@ const BackgroundBlur = styled.div<{ bg?: string }>`
   background-position: top;
   opacity: 0.24;
   filter: blur(0px);
-  transform: scale(1.00);
+  transform: scale(1.05);
 `;
 
 const Container = styled.div`
@@ -100,7 +90,7 @@ const Content = styled.div`
   width: 100%;
 
   @media (min-width: 1024px) {
-    width: 50%; /* ocupa metade ao lado do cover */
+    width: 50%; 
   }
 `;
 
@@ -123,11 +113,11 @@ const Header = styled.div`
   }
 
   a {
-    color: #d1d5db; /* gray-300 */
+    color: #d1d5db; 
     transition: color 0.2s;
 
     &:hover {
-      color: #3b82f6; /* blue-500 */
+      color: #3b82f6; 
     }
   }
 `;
@@ -149,7 +139,7 @@ const Status = styled.div`
 `;
 
 const Description = styled.p`
-  color: #d1d5db; /* gray-300 */
+  color: #d1d5db;
   margin-bottom: 1.5rem;
   line-height: 1.6;
   font-size: 1.3rem;
@@ -158,38 +148,13 @@ const Description = styled.p`
 
 const Dates = styled.div`
   font-size: 0.875rem;
-  color: #9ca3af; /* gray-400 */
+  color: #9ca3af; 
   margin-bottom: 1.5rem;
 `;
 
-// const Categories = styled.div`
-//   margin-bottom: 1.5rem;
-
-//   h3 {
-//     font-size: 1.125rem;
-//     font-weight: 600;
-//     margin-bottom: 0.5rem;
-//   }
-
-//   div {
-//     display: flex;
-//     flex-wrap: wrap;
-//     gap: 0.5rem;
-//   }
-
-//   span {
-//     padding: 0.5rem 0.75rem;
-//     background: white;
-//     color: #1f2937;
-//     border-radius: 0.375rem;
-//     font-size: 0.875rem;
-//     font-weight: 500;
-//   }
-// `;
-
 const Footer = styled.div`
   font-size: 0.75rem;
-  color: #6b7280; /* gray-500 */
+  color: #6b7280;
   display: flex;
   flex-direction: column;
   margin-top: 1.5rem;
@@ -202,7 +167,6 @@ const Footer = styled.div`
 
 const ActionMethods = styled.div`
     display: flex;
-    // flex-direction: column;
     gap: 0.5rem;
     margin-top: 1.5rem;
     width: fit-content;
@@ -211,7 +175,7 @@ const ActionMethods = styled.div`
     display: inline-flex;
     align-items: center;
     padding: 12px 24px;
-    background: var(--primary); /* blue-500 */
+    background: var(--primary); 
     color: white;
     gap: 10px;
     border-radius: 0.375rem;
@@ -219,7 +183,7 @@ const ActionMethods = styled.div`
     font-weight: 500;
     transition: background 0.2s;
     &:hover {
-      background: var(--primary-light); /* blue-600 */
+      background: var(--primary-light);
         }
     }
 
@@ -238,7 +202,6 @@ const ActionMethods = styled.div`
     }
 `
 
-// const MediaContent = styled.div`
 //   display: flex;
 //     gap: 1rem;
 //     height: 100%;
@@ -267,7 +230,6 @@ export default function MainProject() {
     <Section>
       <BackgroundBlur bg={content.coverImage || ""} />
       <Container>
-        {/* Conteúdo */}
         <Content>
           {content.finishDate && (
             <Status>
@@ -278,16 +240,12 @@ export default function MainProject() {
             <h1>{content.title}</h1>
           </Header>
 
-          {/* Descrição */}
           {content.description && <Description>{content.description}</Description>}
-          {/* {content.description && <Description>{content.note}</Description>} */}
 
-          {/* Datas */}
           <Dates>
             {content.startDate} - {content.finishDate}
           </Dates>
 
-          {/*Demonstração e repo link*/}
           <ActionMethods>
             <a href={content.demoLink} className="links" target="BLANK" rel="noopener noreferrer">
               <SquareDashedMousePointer size={18} />
@@ -300,9 +258,8 @@ export default function MainProject() {
 
           </ActionMethods>
 
-          {/* Rodapé */}
           <Footer>
-            <span>Projeto criado há 3 meses</span>
+            <span>Projeto recente criado há +2 meses</span>
           </Footer>
         </Content>
         <Content>

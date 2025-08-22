@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
+import { createPortal } from "react-dom";
 
 interface MediaTypes {
     images: string[];
@@ -55,6 +56,8 @@ const StyledImg = styled.img`
   max-width: 250px;
   height: 180px;
   object-fit: cover;
+  border: 1px solid #a6a6a6;
+  padding: 8px;
   border-radius: 12px;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
@@ -107,8 +110,9 @@ const Modal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 2147483646; /* muito alto */
   cursor: zoom-out;
+  pointer-events: auto;
 
   animation: fadeIn 0.3s ease;
 
@@ -128,7 +132,10 @@ const ModalImage = styled.img`
   max-width: 90%;
   max-height: 90%;
   border-radius: 12px;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.8); /* sombra grande */
+  z-index: 2147483647;
+  position: relative; /* cria stacking dentro do modal, mas com z-index maior */
+  /* se quiser sombras não serem recortadas por filtros, use filter: drop-shadow(...) */
 `;
 
 
@@ -185,36 +192,34 @@ const MediaGallery = ({ images }: MediaTypes) => {
         };
     }, [selectedImage]);
 
-    return (
-        <>
-            <SliderWrapper>
-                <MediaContent ref={sliderRef} className="keen-slider">
-                    {images.map((img, index) => (
-                        <Slide
-                            key={index}
-                            className="keen-slider__slide"
-                            onClick={() => setSelectedImage(img)}
-                        >
-                            <StyledImg src={img} alt={`media-${index}`} loading="lazy" />
-                        </Slide>
-                    ))}
-                </MediaContent>
+   return (
+    <>
+      <SliderWrapper>
+        <MediaContent ref={sliderRef} className="keen-slider">
+          {images.map((img, index) => (
+            <Slide key={index} className="keen-slider__slide" onClick={() => setSelectedImage(img)}>
+              <StyledImg src={img} alt={`media-${index}`} loading="lazy" />
+            </Slide>
+          ))}
+        </MediaContent>
 
-                {slider && slider.current && (
-                    <>
-                        <ArrowLeft onClick={() => slider.current?.prev()}>&#10094;</ArrowLeft>
-                        <ArrowRight onClick={() => slider.current?.next()}>&#10095;</ArrowRight>
-                    </>
-                )}
-            </SliderWrapper>
+        {slider && slider.current && (
+          <>
+            <ArrowLeft onClick={() => slider.current?.prev()}>&#10094;</ArrowLeft>
+            <ArrowRight onClick={() => slider.current?.next()}>&#10095;</ArrowRight>
+          </>
+        )}
+      </SliderWrapper>
 
-            {selectedImage && (
-                <Modal onClick={() => setSelectedImage(null)}>
-                    <ModalImage src={selectedImage} alt="expanded" />
-                </Modal>
-            )}
-        </>
-    );
+      {selectedImage &&
+        createPortal(
+          <Modal onClick={() => setSelectedImage(null)}>
+            <ModalImage src={selectedImage} alt="expanded" />
+          </Modal>,
+          document.body
+        )}
+    </>
+  );
 };
 
 export default MediaGallery;
