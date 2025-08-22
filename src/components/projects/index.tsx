@@ -8,7 +8,6 @@ const Projects = () => {
     <Section id="projects">
       <Content>
         <MainProject />
-
         <OtherProjectsSection>
           <Header>
             <Title>Side projects</Title>
