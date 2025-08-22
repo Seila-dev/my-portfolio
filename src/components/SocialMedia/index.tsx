@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
-import image from '../../assets/subaru_gluttonyif_edited-1.png'
+import image from '../../assets/subaru-reinhard.jpg'
+import character from '../../assets/me.jpg'
 // import video from '../../assets/subaru-stairs.mp4';
 import linkedin from '../../assets/linkedin.png';
 import github from '../../assets/github.png';
@@ -9,7 +10,7 @@ import tiktok from '../../assets/tiktok.png'
 export const SocialMedia = () => {
 
     return (
-        <AboutSection id="socialmedia">
+        <Section id="socialmedia">
             {/* <BackgroundVideo autoPlay loop muted playsInline>
   <source src={video} type="video/mp4" />
 </BackgroundVideo> */}
@@ -17,6 +18,16 @@ export const SocialMedia = () => {
                 <Title>Redes sociais</Title>
                 <Subtitle>Todas as minhas formas de comunicação</Subtitle>
             </Header>
+                        <Footer>
+              <WidthSettings>
+                <Icon src={character} alt="Tiktok link" className="character" />
+                <TextWrapper>
+                  <Text>Erick Rodrigues</Text>
+                  <TextSecondary>Fullstack Developer | Tech Lead</TextSecondary>
+                </TextWrapper>
+                            
+              </WidthSettings>
+              </Footer>
 
             <Content>
                 <MediaBox as="a" href="https://github.com/Seila-dev" target="_blank" rel="noopener noreferrer" variant='github'>
@@ -51,7 +62,8 @@ export const SocialMedia = () => {
                     </TextWrapper>
                 </MediaBox>
             </Content>
-        </AboutSection>
+
+        </Section>
     );
 };
 
@@ -65,7 +77,7 @@ const fadeIn = keyframes`
 //     to { transform: translateX(0); opacity: 1; }
 // `;
 
-const AboutSection = styled.section`
+const Section = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -73,8 +85,10 @@ const AboutSection = styled.section`
   padding-top: 150px;
   min-height: 100vh;
   color: white;
+  gap: 20px;
+  z-index: -1;
   overflow: hidden;
-  background: linear-gradient(to right, #1a002b, #000, transparent);
+  background: linear-gradient(to left, #ac010145, #000, transparent);
 
   /* Imagem da biblioteca no canto direito */
   &::before {
@@ -83,16 +97,16 @@ const AboutSection = styled.section`
     top: 0;
     left: 0;
     bottom: 0;
-    width: 50%;
+    width: 70%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center right;
 background-image: 
   linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent 80%),
   url(${image});
-    opacity: 0.3;
+    opacity: 0.2;
     pointer-events: none;
-    z-index: 1;
+    z-index: -1;
   }
 
 
@@ -109,16 +123,16 @@ background-image:
   /* Combina 3 camadas: top, bottom e lateral (fade suave da imagem) */
   background:
     linear-gradient(to bottom, #000 1px, transparent 50px),   /* Top gradient */
-    linear-gradient(to top, #000 1px, transparent 50px),     /* Bottom gradient */
+    // linear-gradient(to top, #000 1px, transparent 50px),     /* Bottom gradient */
     linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent 0%); /* Fade da imagem para o fundo */
   
-  z-index: 3;
+  z-index: 1;
   pointer-events: none;
 }
 
   > * {
     position: relative;
-    z-index: 3;
+    z-index: 1;
   }
 
   @media (max-width: 1024px) {
@@ -127,7 +141,8 @@ background-image:
     &::before,
     &::after {
       width: 100%;
-        background: linear-gradient(to right, #1a002b, #000, transparent);
+      background-position: center;
+        // background: linear-gradient(to right, #1a002b, #000, transparent);
         z-index: 0;
     }
   }
@@ -165,10 +180,9 @@ const Content = styled.div`
     transition: 0.2s ease-out;
     width: 100%;
 
-    // @media (max-width: 1024px) {
-    //     flex-direction: column;
-    //     gap: 40px;
-    // }
+    @media (max-width: 1024px) {
+        margin-bottom: 60px;
+    }
 `;
 
 // const BackgroundVideo = styled.video`
@@ -224,6 +238,26 @@ const Icon = styled.img`
   object-fit: contain;
 `;
 
+const WidthSettings = styled.div`
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 14px;
+
+    
+  img{
+    border-radius: 50%;
+    object-fit: cover;
+    width: 60px;
+    height: 60px;
+  }
+
+  span{
+    font-size: 1.3rem;
+  }
+`
+
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -241,3 +275,16 @@ const TextSecondary = styled.span`
   font-size: 13px;
   color: #bbb;
 `;
+
+const Footer = styled.footer`
+    position: relative;
+    bottom: 0;
+    left: 0;
+    gap: 12px;
+    display: flex;
+    padding: 30px 14px;
+    justify-content: center;
+      background: #4e4e4e4d;
+    align-items: center;
+    width: 100%;
+`
