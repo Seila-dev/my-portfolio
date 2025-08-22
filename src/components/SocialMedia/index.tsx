@@ -88,7 +88,7 @@ const Section = styled.section`
   gap: 20px;
   z-index: -1;
   overflow: hidden;
-  background: linear-gradient(to left, #ac010145, #000, transparent);
+  background: linear-gradient(to left, #4c3b3b45, #000, transparent);
 
   /* Imagem da biblioteca no canto direito */
   &::before {
