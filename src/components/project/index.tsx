@@ -1,35 +1,3 @@
-// import { ProjectProps } from "@/interfaces/projectProps"
-
-// export const Project: React.FC<ProjectProps> = ({ name, liveLink, repoLink, desktopImg, mobileImg, description, technologies }) => {
-
-//     return (
-//     <div className="project">
-//       <h3 className="name">{name}</h3>
-//       <div className="links">
-//         {liveLink ? (
-//           <a href={liveLink} target="blank">Testar website</a>
-//         ) : (
-//           <a className="disabled-link">Não há visualização</a>
-//         )}
-//         <a href={repoLink} target="blank">Ir para repositório</a>
-//       </div>
-//       <img src={desktopImg} alt="projeto em destaque" className="desktop-img" />
-//       <img src={mobileImg} alt="projeto em destaque" className="mobile-img" />
-//       <div className="technologies">
-//         <div className="tech-box">
-//           {technologies.map((logo, index) => (
-//             <img key={index} src={logo} alt="logo" className="logo" />
-//           ))}
-//         </div>
-//       </div>
-//       <div className="descriptionText">
-//         <p>{description}</p>
-//       </div>
-//     </div>
-//     )
-// }
-
-// CardProject.tsx
 import React from "react";
 import styled from "styled-components";
 import Star from '../../assets/stars.png'
@@ -43,7 +11,7 @@ type CardProjectProps = {
   category: string;
   title: string;
   description?: string;
-  rating?: number; // de 0 a 5
+  rating?: number;
   lastUpdated: string;
   repoLink?: string;
   liveLink?: string;
@@ -72,7 +40,7 @@ export const Project: React.FC<CardProjectProps> = ({
           <FavoriteButton onClick={onFavorite}>
             <StarImg
               src={isFavorite ? Heart : UnfilledHeart}
-              alt={isFavorite ? "favorito" : "Não favorito"}
+              alt={isFavorite ? "favorite" : "Not favorite"}
             />
             
           </FavoriteButton>
@@ -87,7 +55,7 @@ export const Project: React.FC<CardProjectProps> = ({
               <StarImg
                 key={i}
                 src={i < rating ? Star : UnfilledStar}
-                alt={i < rating ? "Estrela preenchida" : "Estrela vazia"}
+                alt={i < rating ? "Filled start" : "Unfilled star"}
               />
             ))}
           </Stars>
@@ -104,23 +72,23 @@ export const Project: React.FC<CardProjectProps> = ({
                 rel="noopener noreferrer"
               >
                 <SquareDashedMousePointer size={18} />
-                Demonstração
+                Demonstration
               </a>
             ) : (
               <DisabledButton className="links disabled">
                 <SquareDashedMousePointer size={18} />
-                Sem demonstração
+                No Demonstration
               </DisabledButton>
             )}
             <a href={repoLink} className="links secondary" target="BLANK" rel="noopener noreferrer">
               <Code2 size={18} />
-              Repositório
+              Repository
             </a>
 
           </ActionMethods>
         ) : null}
 
-        <LastUpdated>Atualizado em {lastUpdated}</LastUpdated>
+        <LastUpdated>Last update: {lastUpdated}</LastUpdated>
       </Content>
     </Card>
   );

@@ -55,32 +55,34 @@ export const CarouselContainer2 = () => {
       >
         <Project
           cover={otherProjectImage}
-          category="Projeto Pessoal"
+          category="Personal Project"
           title="TJS: The Joy System"
-          description="TJS é uma aplicação web gamificada de gestão de produtividade. Que te permite criar tarefas, acumular moedas, resgatar recompensas, fazer anotações e visualizar um calendário integrado de objetivos."
+          description="TJS is a gamified web application for productivity management. It allows you to create tasks, earn coins, redeem rewards, take notes, and view an integrated goals calendar."
           rating={4}
-          lastUpdated="22/08/2025 - 01:09"
+          lastUpdated="08/22/2025 - 01:09"
           isFavorite={true}
           repoLink="https://github.com/Seila-dev/joy-system"
           liveLink="https://joy-system.vercel.app/"
         />
+
         <Project
           cover={otherProjectImage2}
           category="Freelance"
-          description="Books Register é uma aplicação full stack desenvolvida com Next.js, onde você pode gerenciar seus livros, filmes e séries de forma organizada. Fiz sozinho, na época sem a startup e peguei a ideia do watchlist a partir desse projeto."
-          title="Books Register: Antigo watchlist"
+          title="Books Register: Early Watchlist"
+          description="Books Register is a full stack application built with Next.js, where you can manage your books, movies, and TV shows in an organized way. I built it alone, before founding the startup, and the Watchlist idea came from this project."
           rating={4}
-          lastUpdated="22/08/2025 - 01:09"
+          lastUpdated="08/22/2025 - 01:09"
           liveLink="https://books-register-v2.vercel.app/home"
           repoLink="https://github.com/Seila-dev/books-register-v2"
           isFavorite={false}
         />
+
         <Project
           cover={otherProjectImage3}
-          category="Outros"
-          title="Em breve"
-          description="Tenho outros projetos mas são projetos de aprendizados. Se quiser conhecer mais projetos como esses, só acessar o link pro repositório"
-          lastUpdated="22/08/2025 - 01:09"
+          category="Others"
+          title="Coming Soon"
+          description="I have other projects, but most are learning-focused. If you'd like to explore more, you can check out my repositories on GitHub."
+          lastUpdated="08/22/2025 - 01:09"
           repoLink="https://github.com/Seila-dev/"
           isFavorite={false}
         />

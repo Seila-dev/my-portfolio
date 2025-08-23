@@ -51,14 +51,14 @@ export const Main = () => {
         <Background />
             <Introduction id="home">
                 <div className="info">
-                    <p>Meu nome é</p>
+                    <p>My name is</p>
                     <h1>Erick Rodrigues</h1>
-                    <span> &gt; Desenvolvedor Full Stack | Tech Lead</span>
+                    <span> &gt; Full Stack Developer | Tech Lead</span>
                     <div className="cv-style">
-                        <a href={cvDownload} className="download-cv links" download>Baixar Currículo</a>
+                        <a href={cvDownload} className="download-cv links" download>Download Resume</a>
                         <a href="https://www.linkedin.com/in/erickrodrigues-dev/" className="second-cta links" target="_blank" rel="noopener noreferrer">
                             <img src={linkedinIcon} alt="Icon Linkedin" />
-                            Me encontre no LinkedIn
+                            Connect with me on LinkedIn
                         </a>
                     </div>
                 </div>
