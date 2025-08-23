@@ -10,8 +10,8 @@ const Projects = () => {
         <MainProject />
         <OtherProjectsSection>
           <Header>
-            <Title>Side projects</Title>
-            <Subtitle>Outros projetos durante a carreira</Subtitle>
+            <Title>Side Projects</Title>
+            <Subtitle>Other projects throughout my career</Subtitle>
           </Header>
           <CarouselContainer2 />
         </OtherProjectsSection>

@@ -12,7 +12,7 @@ export const SocialFooter = () => {
                 <FooterContent>
                     <SocialSection>
                         <h2>Social Media</h2>
-                        <p>Me encontre nas redes sociais e acompanhe meu trabalho</p>
+                        <p>Find me on social networks and follow my work</p>
                         
                         <SocialGrid>
                             <SocialLink 
@@ -24,7 +24,7 @@ export const SocialFooter = () => {
                                 <img src={githubIcon} alt="GitHub" />
                                 <div className="social-info">
                                     <span className="social-name">GitHub</span>
-                                    <span className="social-desc">Meus projetos e código</span>
+                                    <span className="social-desc">My projects and code</span>
                                 </div>
                             </SocialLink>
 
@@ -37,7 +37,7 @@ export const SocialFooter = () => {
                                 <img src={linkedinIcon} alt="LinkedIn" />
                                 <div className="social-info">
                                     <span className="social-name">LinkedIn</span>
-                                    <span className="social-desc">Carreira e networking</span>
+                                    <span className="social-desc">Career and networking</span>
                                 </div>
                             </SocialLink>
 
@@ -50,7 +50,7 @@ export const SocialFooter = () => {
                                 <img src={tiktokIcon} alt="TikTok" />
                                 <div className="social-info">
                                     <span className="social-name">TikTok</span>
-                                    <span className="social-desc">Conteúdo sobre tech</span>
+                                    <span className="social-desc">Tech content (PT-BR)</span>
                                 </div>
                             </SocialLink>
 
@@ -63,15 +63,15 @@ export const SocialFooter = () => {
                                 <img src={youtubeIcon} alt="YouTube" />
                                 <div className="social-info">
                                     <span className="social-name">YouTube</span>
-                                    <span className="social-desc">Tutoriais e projetos</span>
+                                    <span className="social-desc">Tutorials and projects (PT-BR)</span>
                                 </div>
                             </SocialLink>
                         </SocialGrid>
                     </SocialSection>
 
                     <FooterBottom>
-                        <p>&copy; 2025 Erick Rodrigues. Desenvolvedor Full Stack & Tech Lead</p>
-                        <span>Feito com ❤️ e muito código</span>
+                        <p>&copy; 2025 Erick Rodrigues. Full Stack Developer & Tech Lead</p>
+                        <span>Built with ❤️ and lots of code</span>
                     </FooterBottom>
                 </FooterContent>
             </FooterContainer>

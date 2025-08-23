@@ -44,21 +44,21 @@ export default function Header(){
                     <NavItem href="#home" $active={activeSection === "home"}>
                         <Home size={18} />
                     </NavItem>
-                    <TooltipText>Início</TooltipText>
+                    <TooltipText>Home</TooltipText>
                 </TooltipWrapper>
 
                 <TooltipWrapper>
                     <NavItem href="#about" $active={activeSection === "about"}>
                         <User size={18} />
                     </NavItem>
-                    <TooltipText>Sobre</TooltipText>
+                    <TooltipText>About</TooltipText>
                 </TooltipWrapper>
 
                 <TooltipWrapper>
                     <NavItem href="#projects" $active={activeSection === "projects"}>
                         <Folder size={18} />
                     </NavItem>
-                    <TooltipText>Projetos</TooltipText>
+                    <TooltipText>Projects</TooltipText>
                 </TooltipWrapper>
                 <TooltipWrapper>
                     <NavItem href="#socialmedia" $active={activeSection === "socialmedia"}>

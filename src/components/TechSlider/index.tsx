@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
 
-// Exemplo de imagens – substitua pelos seus
 import reactLogo from "../../assets/reactlogo.png";
 import nodeLogo from "../../assets/nodejs.png";
 import typescriptLogo from "../../assets/typescriptlogo.png";
@@ -47,15 +46,14 @@ const scroll = keyframes`
 const SliderWrapper = styled.div`
   overflow: hidden;
   width: 100%;
-  z-index: 0; /* Definindo z-index para não interferir em outros elementos */
+  z-index: 0;
   background-color: transparent;
-  position: relative; /* Agora o TechSlider será posicionado de forma mais controlada */
+  position: relative;
   bottom: 0;
   user-select: none;
-  padding: 40px 0; /* Você pode ajustar o padding conforme necessário */
+  padding: 40px 0; 
   
   @media (max-width: 768px) {
-    /* Ajustes para telas menores */
     padding: 20px 0;
   }
 `;
@@ -67,7 +65,7 @@ const SliderContent = styled.div`
   gap: 30px;
   
   @media (max-width: 768px) {
-    gap: 15px; /* Ajuste o gap para telas menores */
+    gap: 15px; 
   }
 `;
 

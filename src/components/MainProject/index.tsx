@@ -13,20 +13,20 @@ const content = {
   id: "1",
   title: "Watchlist",
   coverImage: cover,
-  description: "Plataforma multimídia para organizar e explorar filmes, séries, animes, mangás e jogos em um só lugar. Foco em personalização, interação com a comunidade e centralização de conteúdo. Lidero a equipe com + de 6 devs e 2 designers construindo um produto robusto e escalável com foco em UX e inclusão digital.",
-  note: "Somos uma startup com 6 devs e 2 designers (em breve +2 no time) criando uma plataforma multimídia de entrentenimento. A ideia nasceu da falta de um lugar inclusivo e completo pra acompanhar tudo o que a gente curte, de filmes a mangás.",
+  description: "A multimedia platform to organize and explore movies, TV shows, anime, manga, and games in one place. Focused on personalization, community interaction, and content centralization. I lead a team of 6+ developers and 2+ designers, building a robust and scalable product with strong emphasis on UX and digital inclusion.",
+  note: "We are a startup with 6 developers and 2 designers (soon expanding by +2) creating a multimedia entertainment platform. The idea was born from the lack of an inclusive and complete place to track everything we enjoy. From movies to manga.",
   startDate: "2025-06",
-  finishDate: "Até o momento",
+  finishDate: "Present",
   repoLink: "https://github.com/Seila-dev/watchlist",
   demoLink: "https://your-watchlist.vercel.app/",
   rating: 5,
 
   categories: [
-    { categoryId: "1", category: { name: "Ficção" } },
-    { categoryId: "2", category: { name: "Aventura" } },
+    { categoryId: "1", category: { name: "Startup" } },
+    { categoryId: "2", category: { name: "Platform" } },
   ],
-  createdAt: "2023-01-01",
-  updatedAt: "2023-02-01",
+  createdAt: "2025-06-01",
+  updatedAt: "2025-08-22",
 };
 
 const Section = styled.section`
@@ -227,7 +227,7 @@ export default function MainProject() {
         <Content>
           {content.finishDate && (
             <Status>
-              <span>Em desenvolvimento</span>
+              <span>In Development</span>
             </Status>
           )}
           <Header>
@@ -245,7 +245,7 @@ export default function MainProject() {
             <StarImg
               key={i}
               src={i < content.rating ? Star : UnfilledStar}
-              alt={i < content.rating ? "Estrela preenchida" : "Estrela vazia"}
+              alt={i < content.rating ? "Filled star" : "Unfilled star"}
             />
           ))}
         </Stars>
@@ -253,17 +253,17 @@ export default function MainProject() {
           <ActionMethods>
             <a href={content.demoLink} className="links" target="BLANK" rel="noopener noreferrer">
               <SquareDashedMousePointer size={18} />
-              Demonstração
+              Demonstration
             </a>
             <a href={content.repoLink} className="links secondary" target="BLANK" rel="noopener noreferrer">
               <Code2 size={18} />
-              Repositório
+              Repository
             </a>
 
           </ActionMethods>
 
           <Footer>
-            <span>Projeto recente criado há +2 meses</span>
+            <span>Recent project created +2 months ago</span>
           </Footer>
         </Content>
         <Content>

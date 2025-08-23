@@ -6,29 +6,29 @@ import image from '../../assets/plaiades-2.webp'
 
 const About = () => {
     const [currentExperience, setCurrentExperience] = useState<string>(
-        "Desenvolvedor Full Stack e Tech Lead com experiência no desenvolvimento, arquitetura, segurança e manutenção de aplicações web modernas e APIs escaláveis. Atualmente, sou Tech Lead na Kosting Services, onde lidero uma equipe de desenvolvedores e designers focada em construir produtos digitais inovadores."
+        "Full Stack Developer and Tech Lead with experience in building, architecting, securing, and maintaining modern web applications and scalable APIs. Currently, I am Tech Lead at Kosting Services, leading a team of developers and designers focused on delivering innovative digital products."
     );
 
     const experiences = [
         {
             title: "Tech Lead - Kosting Services",
-            description: "Atualmente, sou Tech Lead em uma startup SaaS com uma equipe de 7 desenvolvedores e 2 designers (atualmente contratando + designers). Estou liderando a construção de produtos digitais reais, focando em metodologias ágeis, colaboração constante e sempre entregando o máximo de qualidade possível.",
-            date: "06/2025 - Até o momento",
+            description: "Currently working as Tech Lead at a SaaS startup with a team of 7 developers and 2 designers (actively hiring more designers). I am leading the development of real digital products, applying agile methodologies, fostering continuous collaboration, and always aiming to deliver the highest possible quality.",
+            date: "06/2025 - Present",
             highlight: "Leadership",
-            tags: ["Team Lead", "SaaS", "Metodologias Ágeis"]
+            tags: ["Team Lead", "SaaS", "Kanban/SCRUM"]
         },
         {
-            title: "Desenvolvedor Full Stack - Freelancer",
-            description: "Atuação em projetos de software sob demanda, com foco em entregas completas de aplicações web, desde a definição da arquitetura até o deploy final. Entreguei soluções funcionais e escaláveis, voltadas à experiência do usuário, otimização de performance e segurança.",
-            date: "01/2024 - Até o momento",
+            title: "Full Stack Developer - Freelancer",
+            description: "Worked on custom software projects, delivering complete web applications from architecture design to final deployment. Delivered functional and scalable solutions with strong focus on user experience, performance optimization, and security.",
+            date: "01/2024 - Present",
             highlight: "Full Stack",
-            tags: ["React.js", "Node.js", "PostgreSQL", "JWT"]
+            tags: ["React.js", "Next.js", "TypeScript",  "Node.js", "Nest.js", "PostgreSQL", "OAuth 2.0"]
         }
     ];
 
     const currentExp = experiences.find(exp => exp.description === currentExperience) || {
-        title: "Visão Geral da Carreira",
-        date: "4+ Anos como Desenvolvedor Full Stack",
+        title: "Career Overview",
+        date: "4+ Years as a Full Stack Developer",
         icon: <Zap className="w-5 h-5" />,
         highlight: "Overview",
         tags: ["JavaScript", "TypeScript", "React.js", "Next.js", "Node.js"]
@@ -40,8 +40,8 @@ const About = () => {
   <source src={video} type="video/mp4" />
 </BackgroundVideo> */}
             <Header>
-                <Title>Carreira</Title>
-                <Subtitle>Desenvolvedor Full Stack & Tech Lead</Subtitle>
+                <Title>Career</Title>
+                <Subtitle>Full Stack Developer & Tech Lead</Subtitle>
             </Header>
 
             <Content>
@@ -69,7 +69,7 @@ const About = () => {
                 </MainInfo>
 
                 <ExperienceContainer>
-                    <SectionTitle>Experiências</SectionTitle>
+                    <SectionTitle>Experiences</SectionTitle>
                     {experiences.map((experience, index) => (
                         <ExperienceBox
                             key={index}
@@ -84,17 +84,17 @@ const About = () => {
                     ))}
                     
                     <ExperienceBox
-                        onClick={() => setCurrentExperience("Desenvolvedor Full Stack e Tech Lead com experiência no desenvolvimento, arquitetura, segurança e manutenção de aplicações web modernas e APIs escaláveis. Atualmente, sou Tech Lead na Kosting Services, onde lidero uma equipe de desenvolvedores e designers focada em construir produtos digitais inovadores.")}
+                        onClick={() => setCurrentExperience("Full Stack Developer and Tech Lead with experience in building, architecting, securing, and maintaining modern web applications and scalable APIs. Currently, I am Tech Lead at Kosting Services, leading a team of developers and designers focused on delivering innovative digital products.")}
                         isActive={!experiences.find(exp => exp.description === currentExperience)}
                         isOverview
                     >
                         <BoxHeader>
-                            <BoxTitle>Visão Geral</BoxTitle>
+                            <BoxTitle>Overview</BoxTitle>
                         </BoxHeader>
                         <BoxDescription>
-                            Resumo da minha carreira como desenvolvedor, destacando minhas habilidades e experiências mais relevantes.
+                            Summary of my career as a developer, highlighting my key skills and most relevant experiences.
                         </BoxDescription>
-                        <BoxDate>+4 Anos</BoxDate>
+                        <BoxDate>+4 Years</BoxDate>
                     </ExperienceBox>
                 </ExperienceContainer>
             </Content>

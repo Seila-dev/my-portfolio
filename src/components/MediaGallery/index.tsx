@@ -67,34 +67,6 @@ const StyledImg = styled.img`
   }
 `;
 
-// const Arrow = styled.button`
-//   position: absolute;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   background: var(--primary-light);
-//   color: white;
-//   border: none;
-//   border-radius: 50%;
-//   font-size: 1.6rem;
-//   opacity: 0.8;
-//   width: 36px;
-//   height: 36px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   transition: 0.2s ease-out;
-//   cursor: pointer;
-//   z-index: 10;
-
-//   &:hover {
-//     background: rgba(30, 30, 30, 0.3);
-//   }
-
-//   @media (min-width: 1024px) {
-//     display: none;
-//   }
-// `;
-
 const Arrow = styled.button`
   position: absolute;
   top: 50%;
@@ -159,10 +131,9 @@ const ModalImage = styled.img`
   max-width: 90%;
   max-height: 90%;
   border-radius: 12px;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.8); /* sombra grande */
+  box-shadow: 0 40px 80px rgba(0,0,0,0.8); 
   z-index: 2147483647;
-  position: relative; /* cria stacking dentro do modal, mas com z-index maior */
-  /* se quiser sombras não serem recortadas por filtros, use filter: drop-shadow(...) */
+  position: relative;
 `;
 
 
