@@ -5,7 +5,7 @@ import linkedinIcon from '../../assets/linkedin.png'
 import whatsappIcon from '../../assets/whatsapp.png'
 import Projects from "../projects"
 import { useEffect, useState } from "react"
-import cvDownload from '../../assets/ErickOliveiraRodrigues_DevWebFullStack_PDF.pdf'
+import cvDownload from '../../assets/ErickOliveiraRodrigues_TechLeadFullStack_PT.pdf'
 import { TechSlider } from "../TechSlider"
 import About from "../About"
 import { SocialFooter } from "../SocialMedia"
@@ -185,7 +185,7 @@ const Introduction = styled.main`
         background: var(--primary);
         color: white;
         width: 100%;
-        max-width: 200px;
+        max-width: fit-content;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -209,7 +209,6 @@ const Introduction = styled.main`
     .links.second-cta {
       background: transparent;
       border: 2px solid var(--primary);
-      max-width: fit-content;
 
       &:hover {
         background: var(--primary);
