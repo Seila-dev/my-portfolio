@@ -18,7 +18,7 @@ const content = {
   startDate: "2025-06",
   finishDate: "Present",
   repoLink: "https://github.com/Seila-dev/watchlist",
-  demoLink: "https://your-watchlist.vercel.app/",
+  demoLink: null,
   rating: 5,
 
   categories: [
@@ -218,6 +218,22 @@ const StarImg = styled.img`
   margin-right: 4px;
 `;
 
+const DisabledButton = styled.span`
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: #2e2e2e;
+  color: #999;
+  gap: 10px;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 14px;
+  opacity: 0.7;
+  cursor: not-allowed;
+  text-decoration: none;
+`;
+
+
 
 export default function MainProject() {
   return (
@@ -241,20 +257,28 @@ export default function MainProject() {
           </Dates> */}
 
           <Stars>
-          {Array.from({ length: 5 }, (_, i) => (
-            <StarImg
-              key={i}
-              src={i < content.rating ? Star : UnfilledStar}
-              alt={i < content.rating ? "Filled star" : "Unfilled star"}
-            />
-          ))}
-        </Stars>
+            {Array.from({ length: 5 }, (_, i) => (
+              <StarImg
+                key={i}
+                src={i < content.rating ? Star : UnfilledStar}
+                alt={i < content.rating ? "Filled star" : "Unfilled star"}
+              />
+            ))}
+          </Stars>
 
           <ActionMethods>
-            <a href={content.demoLink} className="links" target="BLANK" rel="noopener noreferrer">
-              <SquareDashedMousePointer size={18} />
-              Demonstration
-            </a>
+            {content.demoLink ? (
+              <a href={content.demoLink} className="links" target="BLANK" rel="noopener noreferrer">
+                <SquareDashedMousePointer size={18} />
+                Demonstration
+              </a>
+            ) : (
+              <DisabledButton className="links disabled">
+                <SquareDashedMousePointer size={18} />
+                No Demonstration
+              </DisabledButton>
+            )}
+
             <a href={content.repoLink} className="links secondary" target="BLANK" rel="noopener noreferrer">
               <Code2 size={18} />
               Repository
