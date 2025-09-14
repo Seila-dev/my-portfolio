@@ -5,7 +5,7 @@ import linkedinIcon from '../../assets/linkedin.png'
 import whatsappIcon from '../../assets/whatsapp.png'
 import Projects from "../projects"
 import { useEffect, useState } from "react"
-import cvDownload from '../../assets/ErickOliveiraRodrigues_TechLeadFullStack_PT.pdf'
+import cvDownload from '../../assets/ErickOliveiraRodrigues_TechLeadFullStack_PT_8.pdf'
 import { TechSlider } from "../TechSlider"
 import About from "../About"
 import { SocialFooter } from "../SocialMedia"
