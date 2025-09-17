@@ -12,7 +12,7 @@ const About = () => {
     const experiences = [
         {
             title: "Tech Lead - Kosting Services",
-            description: "Currently working as Tech Lead at a SaaS startup with a team of 7 developers and 2 designers (actively hiring more designers). I am leading the development of real digital products, applying agile methodologies, fostering continuous collaboration, and always aiming to deliver the highest possible quality.",
+            description: "Currently working as Tech Lead at a SaaS startup with a team of 5 developers and 2 designers (actively hiring more designers). I am leading the development of real digital products, applying agile methodologies, fostering continuous collaboration, and always aiming to deliver the highest possible quality.",
             date: "06/2025 - Present",
             highlight: "Leadership",
             tags: ["Team Lead", "CI/CD", "SCRUM", "Unit Tests", "Cloudflare R2 & CDN", "Redis" ]
