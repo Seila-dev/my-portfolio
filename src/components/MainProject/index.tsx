@@ -5,6 +5,8 @@ import UnfilledStar from '../../assets/unfilledstars.png'
 import ProjectImage1 from "../../assets/watchlist.png";
 import ProjectImage2 from "../../assets/watchlist-4.webp";
 import ProjectImage3 from "../../assets/watchlist-3.png";
+import ProjectImage4 from "../../assets/watchlist-portf1.png"
+import ProjectImage5 from "../../assets/watchlist-portf2.png"
 import ComingSoon from "../../assets/comingsoon.png";
 import cover from "../../assets/watchlist-4.webp";
 import MediaGallery from "../MediaGallery";
@@ -14,7 +16,7 @@ const content = {
   title: "Watchlist",
   coverImage: cover,
   description: "A multimedia platform to organize and explore movies, TV shows, anime, manga, and games in one place. Focused on personalization, community interaction, and content centralization. I lead a team of 5+ developers and 3+ designers, building a robust and scalable product with strong emphasis on UX and digital inclusion.",
-  note: "We are a startup with 5 developers and 2 designers (soon expanding by +2) creating a multimedia entertainment platform. The idea was born from the lack of an inclusive and complete place to track everything we enjoy. From movies to manga.",
+  note: "We are a startup with 3 developers and 2 designers (soon expanding by +2) creating a multimedia entertainment platform. The idea was born from the lack of an inclusive and complete place to track everything we enjoy. From movies to manga.",
   startDate: "2025-06",
   finishDate: "Present",
   repoLink: "https://github.com/Seila-dev/watchlist",
@@ -292,7 +294,7 @@ export default function MainProject() {
         </Content>
         <Content>
           <MediaGallery
-            images={[ProjectImage1, ProjectImage2, ProjectImage3, ComingSoon]}
+            images={[ProjectImage1, ProjectImage2, ProjectImage3, ProjectImage4,ProjectImage5, ComingSoon]}
           />
         </Content>
       </Container>

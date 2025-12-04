@@ -53,28 +53,28 @@ export const CarouselContainer2 = () => {
         onMouseUp={handleMouseLeaveOrUp}
         onMouseMove={handleMouseMove}
       >
-        <Project
-          cover={otherProjectImage}
-          category="Personal Project"
-          title="TJS: The Joy System"
-          description="TJS is a gamified web application for productivity management. It allows you to create tasks, earn coins, redeem rewards, take notes, and view an integrated goals calendar."
-          rating={4}
-          lastUpdated="08/22/2025 - 01:09"
-          isFavorite={true}
-          repoLink="https://github.com/Seila-dev/joy-system"
-          liveLink="https://joy-system.vercel.app/"
-        />
-
-        <Project
+                <Project
           cover={otherProjectImage2}
           category="Freelance"
           title="Books Register: Early Watchlist"
           description="Books Register is a full stack application built with Next.js, where you can manage your books, movies, and TV shows in an organized way. I built it alone, before founding the startup, and the Watchlist idea came from this project."
           rating={4}
-          lastUpdated="08/22/2025 - 01:09"
-          liveLink="https://books-register-v2.vercel.app/home"
+          lastUpdated="12/04/2025 - 01:09"
+          liveLink="https://books-register-v2.vercel.app/"
           repoLink="https://github.com/Seila-dev/books-register-v2"
           isFavorite={false}
+        />
+
+        <Project
+          cover={otherProjectImage}
+          category="Personal Project"
+          title="TJS: The Joy System"
+          description="TJS is a gamified web application for productivity management. It allows you to create tasks, earn coins, redeem rewards, take notes, and view an integrated goals calendar."
+          rating={3}
+          lastUpdated="08/22/2025 - 01:09"
+          isFavorite={true}
+          repoLink="https://github.com/Seila-dev/joy-system"
+          liveLink="https://joy-system.vercel.app/"
         />
 
         <Project
