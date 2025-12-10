@@ -1,8 +1,8 @@
 import styled from "styled-components"
 import githubIcon from '../../assets/github.png'
 import linkedinIcon from '../../assets/linkedin.png'
-import tiktokIcon from '../../assets/tiktok.png'
-import youtubeIcon from '../../assets/youtube.png'
+// import tiktokIcon from '../../assets/tiktok.png'
+// import youtubeIcon from '../../assets/youtube.png'
 
 export const SocialFooter = () => {
     return (
@@ -40,7 +40,7 @@ export const SocialFooter = () => {
                                     <span className="social-desc">Career and networking</span>
                                 </div>
                             </SocialLink>
-
+{/* 
                             <SocialLink 
                                 href="https://www.tiktok.com/@erick_dev" 
                                 target="_blank" 
@@ -65,7 +65,7 @@ export const SocialFooter = () => {
                                     <span className="social-name">YouTube</span>
                                     <span className="social-desc">Tutorials and projects (PT-BR)</span>
                                 </div>
-                            </SocialLink>
+                            </SocialLink> */}
                         </SocialGrid>
                     </SocialSection>
 
