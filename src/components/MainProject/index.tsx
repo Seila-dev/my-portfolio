@@ -6,7 +6,8 @@ import ProjectImage1 from "../../assets/watchlist.png";
 import ProjectImage2 from "../../assets/watchlist-4.webp";
 import ProjectImage3 from "../../assets/watchlist-3.png";
 import ProjectImage4 from "../../assets/watchlist-portf1.png"
-import ProjectImage5 from "../../assets/watchlist-portf2.png"
+import ProjectImage5 from "../../assets/watchlist-port3.webp"
+import ProjectImage6 from "../../assets/watchlist-port-4.png"
 import ComingSoon from "../../assets/comingsoon.png";
 import cover from "../../assets/watchlist-4.webp";
 import MediaGallery from "../MediaGallery";
@@ -294,7 +295,7 @@ export default function MainProject() {
         </Content>
         <Content>
           <MediaGallery
-            images={[ProjectImage1, ProjectImage2, ProjectImage3, ProjectImage4,ProjectImage5, ComingSoon]}
+            images={[ProjectImage1, ProjectImage3, ProjectImage4,ProjectImage5, ProjectImage6, ComingSoon]}
           />
         </Content>
       </Container>
